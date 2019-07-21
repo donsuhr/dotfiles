@@ -38,3 +38,5 @@ export NVM_DIR=/Users/bill/.nvm
 alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
+source /usr/local/opt/fzf/shell/key-bindings.zsh

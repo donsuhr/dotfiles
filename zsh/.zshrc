@@ -21,7 +21,7 @@ POWERLEVEL9K_VI_INSERT_MODE_STRING=""
 ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=188"
 export KEYTIMEOUT=1
-plugins=(vi-mode zsh-syntax-highlighting z zsh-autosuggestions fzf)
+plugins=(vi-mode zsh-syntax-highlighting z zsh-autosuggestions)
 export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
