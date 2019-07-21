@@ -59,9 +59,9 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 filetype plugin indent on
 syntax enable
-"set termguicolors
-"set background=light
-"colorscheme solarized8
+set termguicolors
+set background=light
+colorscheme solarized8
 set backspace=indent,eol,start
 set number
 set hidden
