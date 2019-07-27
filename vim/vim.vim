@@ -98,7 +98,6 @@ set ignorecase
 set incsearch
 set lazyredraw
 set noerrorbells         " don't beep
-set nowritebackup
 set number relativenumber
 set scrolloff=3
 set shiftwidth=2
@@ -114,7 +113,6 @@ set termguicolors
 set title                " change the terminal's title
 set visualbell           " don't beep
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set writebackup
 
 filetype plugin indent on
 syntax enable
