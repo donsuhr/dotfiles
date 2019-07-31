@@ -1,0 +1,4 @@
+DEFAULT_USER="winbill"
+
+source $HOME/dotfiles/zsh/.zshrc
+source $HOME/dotfiles/zsh/debian.zshrc
