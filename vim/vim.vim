@@ -33,7 +33,12 @@ Plug 'junegunn/gv.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'mbbill/undotree'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -44,17 +49,43 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'yggdroot/indentline'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ternjs/tern_for_vim'
+Plug 'carlitux/deoplete-ternjs'
+
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'valloric/youcompleteme'
-call vundle#end()
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_camel_case = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#max_abbr_width = 0
+let g:deoplete#max_menu_width = 0
+let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
+let g:deoplete#sources#ternjs#case_insensitive = 1
+let g:deoplete#sources#ternjs#depths = 1
+let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#filetypes = ['jsx', 'javascript.jsx', 'vue' ]
+let g:deoplete#sources#ternjs#filter = 0
+let g:deoplete#sources#ternjs#types = 1
+
+" tern
+let g:tern#arguments = ["--persistent"]
+let g:tern#command = ["tern"]
+let g:tern_request_timeout = 1
+let g:tern_request_timeout = 6000
 
 
 " airline
@@ -74,12 +105,14 @@ set statusline+=%*
 
 " NerdTree
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=[]
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
+hi SpellBad  gui=undercurl guisp=red term=undercurl cterm=undercurl
 set autoindent
 set autoread
 set background=light
@@ -87,17 +120,19 @@ set backspace=indent,eol,start
 set backup
 set backupcopy=yes
 set clipboard=unnamed
+set conceallevel=2
 set cursorline
 set encoding=utf8
 set expandtab
 set formatoptions-=cro
 set hidden
-set history=1000         " remember more commands and search history
+set history=1000
 set hlsearch
 set ignorecase
 set incsearch
 set lazyredraw
-set noerrorbells         " don't beep
+set noerrorbells
+set nowrap
 set number relativenumber
 set scrolloff=3
 set shiftwidth=2
@@ -113,6 +148,7 @@ set termguicolors
 set title                " change the terminal's title
 set visualbell           " don't beep
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmenu
 
 filetype plugin indent on
 syntax enable
@@ -172,7 +208,6 @@ function! FlashLine()
     redraw
   endfor
 endfunction
-nmap <leader>nf :NERDTreeFind<cr>
 
 
 if executable('rg') && (exists(':Rg') != 2)
