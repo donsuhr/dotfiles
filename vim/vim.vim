@@ -3,10 +3,6 @@ let g:vim_home = expand('<sfile>:p:h')
 let &runtimepath.=','.g:vim_home
 let &runtimepath.=','.g:vim_home.'/after'
 
-" node
-" scss-syntax.vim
-" vim-jsx
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -25,83 +21,67 @@ nnoremap <Leader>zh :History<CR>
 " <Leader>zg :Rg -- below
 
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'christoomey/vim-tmux-navigator' " nav from tmux to vim
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/matchtag'
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim' " Git Commit Browser
+" Plug 'kamykn/spelunker.vim' " Spelling -- slow
 Plug 'lifepillar/vim-solarized8'
 Plug 'mbbill/undotree'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'sjl/vitality.vim' " focus events when not in tmux
 Plug 'thaerkh/vim-workspace'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+Plug 'tmux-plugins/vim-tmux-focus-events' " focus events when in tmux
+Plug 'tpope/vim-fugitive' " git stuff
+Plug 'tpope/vim-surround' " surround with quotes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ternjs/tern_for_vim'
-Plug 'carlitux/deoplete-ternjs'
+Plug 'w0rp/ale' " linting
+Plug 'xuyuanp/nerdtree-git-plugin'
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'cakebaker/scss-syntax.vim'", { 'for': 'scss' }
+"Plug 'elzr/vim-json', { 'for': 'json' }
+"Plug 'hail2u/vim-css3-syntax'", { 'for': 'css' }
+"Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+"Plug 'moll/vim-node', { 'for': 'javascript' }
+"Plug 'mustache/vim-mustache-handlebars', { 'for': 'handlebars' }
+"Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+"Plug 'othree/html5.vim', { 'for': 'html' }
+"Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
+
 " vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_guide_size = 1
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
-let g:deoplete#sources#ternjs#case_insensitive = 1
-let g:deoplete#sources#ternjs#depths = 1
-let g:deoplete#sources#ternjs#docs = 1
-let g:deoplete#sources#ternjs#filetypes = ['jsx', 'javascript.jsx', 'vue' ]
-let g:deoplete#sources#ternjs#filter = 0
-let g:deoplete#sources#ternjs#types = 1
-
-" tern
-let g:tern#arguments = ["--persistent"]
-let g:tern#command = ["tern"]
-let g:tern_request_timeout = 1
-let g:tern_request_timeout = 6000
-
+let g:indent_guides_start_level = 2
 
 " airline
 set laststatus=2
 let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#ale#enabled = 1
 let g:airline_left_sep=''
 let g:airline_powerline_fonts = 1
 let g:airline_right_sep=''
 let g:airline_symbols = {}
-let g:airline_symbols.linenr=''
+let g:airline_symbols.linenr='' " hide the line number symbol
 let g:airline_symbols.maxlinenr=''
 let g:airline_theme='light'
-set statusline+=%#warningmsg#
-set statusline+=%*
 
 " NerdTree
 let NERDTreeShowHidden=1
@@ -112,7 +92,7 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
-hi SpellBad  gui=undercurl guisp=red term=undercurl cterm=undercurl
+
 set autoindent
 set autoread
 set background=light
@@ -133,6 +113,7 @@ set incsearch
 set lazyredraw
 set noerrorbells
 set nowrap
+set nospell
 set number relativenumber
 set scrolloff=3
 set shiftwidth=2
@@ -143,6 +124,7 @@ set signcolumn=yes
 set smartcase
 set softtabstop=2
 set splitright
+set splitbelow
 set tabstop=2
 set termguicolors
 set title                " change the terminal's title
@@ -153,8 +135,8 @@ set wildmenu
 filetype plugin indent on
 syntax enable
 colorscheme solarized8
-au FocusLost * :wa
 au FocusLost * stopinsert
+au FocusLost * :wa
 
 " Environment Persistence ------------------------------------------------------
 
