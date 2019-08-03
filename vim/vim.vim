@@ -198,7 +198,7 @@ if executable('rg') && (exists(':Rg') != 2)
   nnoremap <Leader>zg :Rg<CR>
 endif
 
-Use tab for COC completion ----------------------------------------------------
+" Use tab for COC completion ----------------------------------------------------
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
