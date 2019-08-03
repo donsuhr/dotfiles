@@ -6,9 +6,6 @@ let &runtimepath.=','.g:vim_home.'/after'
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
-
 let mapleader = ","
 nnoremap <Leader>nt :NERDTreeToggle<cr>
 nnoremap <Leader>nf :NERDTreeFind<cr>
@@ -19,6 +16,12 @@ nnoremap <Leader>zb :Buffers<CR>
 nnoremap <Leader>zl :Lines<CR>
 nnoremap <Leader>zh :History<CR>
 " <Leader>zg :Rg -- below
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+
 
 call plug#begin('~/.vim/plugged')
 
@@ -43,17 +46,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
 
-"Plug 'cakebaker/scss-syntax.vim'", { 'for': 'scss' }
-"Plug 'elzr/vim-json', { 'for': 'json' }
-"Plug 'hail2u/vim-css3-syntax'", { 'for': 'css' }
-"Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-"Plug 'moll/vim-node', { 'for': 'javascript' }
-"Plug 'mustache/vim-mustache-handlebars', { 'for': 'handlebars' }
-"Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
-"Plug 'othree/html5.vim', { 'for': 'html' }
-"Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-"Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug '/usr/local/opt/fzf'
@@ -61,6 +53,7 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+let g:workspace_autosave = 0
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 0
@@ -117,6 +110,7 @@ set nospell
 set number relativenumber
 set scrolloff=3
 set shiftwidth=2
+set shortmess+=c
 set showcmd
 set showmatch
 set showmode
@@ -128,6 +122,7 @@ set splitbelow
 set tabstop=2
 set termguicolors
 set title                " change the terminal's title
+set updatetime=750
 set visualbell           " don't beep
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu
@@ -137,6 +132,7 @@ syntax enable
 colorscheme solarized8
 au FocusLost * stopinsert
 au FocusLost * :wa
+
 
 " Environment Persistence ------------------------------------------------------
 
@@ -201,3 +197,17 @@ if executable('rg') && (exists(':Rg') != 2)
         \   <bang>0)
   nnoremap <Leader>zg :Rg<CR>
 endif
+
+Use tab for COC completion ----------------------------------------------------
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
