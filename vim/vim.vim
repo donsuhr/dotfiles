@@ -21,7 +21,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
-
+nnoremap <leader>bd :bp\|bd #<CR>
 
 call plug#begin('~/.vim/plugged')
 
