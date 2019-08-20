@@ -48,6 +48,8 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'posva/vim-vue'
+
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
