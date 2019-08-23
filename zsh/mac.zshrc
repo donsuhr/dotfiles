@@ -30,13 +30,8 @@ ulimit -n 65536 65536
 # jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
-# nvm
-export NVM_DIR=/Users/bill/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# rvm
-alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
 source /usr/local/opt/fzf/shell/key-bindings.zsh
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
