@@ -200,6 +200,8 @@ if executable('rg') && (exists(':Rg') != 2)
   nnoremap <Leader>zg :Rg<CR>
 endif
 
+let g:fzf_history_dir = g:vim_home . '/fzfHist'
+
 " Use tab for COC completion ----------------------------------------------------
 
 inoremap <silent><expr> <TAB>
@@ -212,4 +214,3 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
