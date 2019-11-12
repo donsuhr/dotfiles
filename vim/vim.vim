@@ -87,6 +87,12 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
+" Ale
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_delay = 1000
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
 
 set autoindent
 set autoread
