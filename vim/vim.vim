@@ -45,7 +45,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
-
+" :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'posva/vim-vue'
