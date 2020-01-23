@@ -32,7 +32,7 @@ Plug 'junegunn/gv.vim' " Git Commit Browser
 " Plug 'kamykn/spelunker.vim' " Spelling -- slow
 Plug 'lifepillar/vim-solarized8'
 Plug 'mbbill/undotree'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -43,11 +43,11 @@ Plug 'tpope/vim-fugitive' " git stuff
 Plug 'tpope/vim-surround' " surround with quotes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale' " linting
+Plug 'dense-analysis/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
 " :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'posva/vim-vue'
 
 Plug '/usr/local/opt/fzf'
@@ -200,10 +200,12 @@ if executable('rg') && (exists(':Rg') != 2)
   command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg --column --line-number --no-heading --color=always --hidden --smart-case '.(len(<q-args>) > 0 ? <q-args> : '""'), 1,
-        \   <bang>0 ? fzf#vim#with_preview('up:60%')
-        \           : fzf#vim#with_preview('right:50%', '?'),
+        \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+        \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
         \   <bang>0)
-  nnoremap <Leader>zg :Rg<CR>
+  nnoremap <Leader>zg :Rg!<CR>
+
+  " fzf#vim#with_preview([[options to wrap], [preview window expression], [toggle-preview keys...]])
 endif
 
 let g:fzf_history_dir = g:vim_home . '/fzfHist'
