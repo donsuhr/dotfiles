@@ -1,5 +1,6 @@
-let b:ale_fixers = ['prettier', 'eslint']
-let b:ale_linters = ['eslint']
+let b:ale_linter_aliases =  ['vue', 'css', 'html', 'javascript']
+let b:ale_fixers = ['prettier', 'eslint', 'stylelint']
+let b:ale_linters = ['eslint', 'stylelint']
 
 set path=.,src
 set suffixesadd=.js,.jsx,.vue
@@ -16,3 +17,4 @@ function! LoadMainNodeModule(fname)
 endfunction
 
 set includeexpr=LoadMainNodeModule(v:fname)
+
