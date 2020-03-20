@@ -2,3 +2,6 @@ DEFAULT_USER="bill"
 
 source $HOME/dotfiles/zsh/.zshrc
 source $HOME/dotfiles/zsh/mac.zshrc
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
