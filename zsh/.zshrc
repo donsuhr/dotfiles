@@ -2,6 +2,8 @@ export TERM=xterm-256color
 unsetopt LIST_BEEP
 export KEYTIMEOUT=1
 
+unsetopt nomatch
+
 FZF_DEFAULT_OPTS=
 FZF_DEFAULT_OPTS+=" --ansi" 
 FZF_DEFAULT_OPTS+=" --preview-window 'right:60%'" 
