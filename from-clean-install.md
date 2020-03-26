@@ -36,8 +36,10 @@ cask install gimp --appdir=/Applications/_docs
 cask install ichm --appdir=/Applications/_docs
 cask install inkscape --appdir=/Applications/_docs
 cask install macdown  --appdir=/Applications/_docs
-cask install on-the-job --appdir=/Applications/_docs
-cask install openoffice --appdir=/Applications/_docs
+# cask install on-the-job --appdir=/Applications/_docs
+# cask install openoffice --appdir=/Applications/_docs
+cask install libreoffice --appdir=/Applications/_docs
+
 # timing : https://updates.timingapp.com/download/Timing-2018.3.2.dmg
 
 # _iNetDev
@@ -54,7 +56,6 @@ cask install versions --appdir=/Applications/_iNetDev
 
 #internet
 cask install firefox --appdir=/Applications/_internet
-cask install homebrew/cask-versions/firefox-developer-edition --appdir=/Applications/_internet
 cask install google-chrome --appdir=/Applications/_internet
 cask install google-chrome-canary --appdir=/Applications/_internet
 cask install lastfm --appdir=/Applications/_internet

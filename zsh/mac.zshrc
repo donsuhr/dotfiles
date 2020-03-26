@@ -22,7 +22,7 @@ bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
 export CHROME_BIN="/Applications/_internet/Google Chrome.app/Contents/MacOS/Google Chrome"
-export FIREFOX_BIN="/usr/local/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/firefox-bin"
+export FIREFOX_BIN="/Applications/_internet/Firefox.app/Contents/MacOS/firefox-bin"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 ulimit -n 65536 65536
