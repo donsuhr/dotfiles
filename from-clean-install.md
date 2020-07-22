@@ -53,9 +53,11 @@ cask install sourcetree --appdir=/Applications/_iNetDev
 cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask-versions/master/Casks/tower2.rb --appdir=/Applications/_iNetDev
 cask install webstorm --appdir=/Applications/_iNetDev
 cask install versions --appdir=/Applications/_iNetDev
+cask install imageoptim --appdir=/Applications/_iNetDev
 
 #internet
 cask install firefox --appdir=/Applications/_internet
+cask install homebrew/cask-versions/firefox-developer-edition --appdir=/Applications/_internet
 cask install google-chrome --appdir=/Applications/_internet
 cask install google-chrome-canary --appdir=/Applications/_internet
 cask install lastfm --appdir=/Applications/_internet
@@ -63,6 +65,7 @@ cask install postbox --appdir=/Applications/_internet
 cask install transmission --appdir=/Applications/_internet
 cask install transmit --appdir=/Applications/_internet
 cask install viscosity --appdir=/Applications/_internet
+cask install microsoft-teams --appdir=/Applications/_internet
 
 #system
 cask install airserver --appdir=/Applications/_system
