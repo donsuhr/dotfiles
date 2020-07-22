@@ -4,6 +4,9 @@ export KEYTIMEOUT=1
 
 unsetopt nomatch
 
+#stop deleting windows
+setopt ignoreeof
+
 FZF_DEFAULT_OPTS=
 FZF_DEFAULT_OPTS+=" --ansi" 
 FZF_DEFAULT_OPTS+=" --preview-window 'right:60%'" 

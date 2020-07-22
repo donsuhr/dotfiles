@@ -21,18 +21,19 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
-nnoremap <leader>bd :bp\|bd #<CR>
+nmap <leader>bd :bp\|bd #<CR>
+nmap <leader>% :MtaJumpToOtherTag<CR>
+
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator' " nav from tmux to vim
 Plug 'editorconfig/editorconfig-vim'
-Plug 'gregsexton/matchtag'
+Plug 'valloric/matchtagalways'
 Plug 'junegunn/gv.vim' " Git Commit Browser
 " Plug 'kamykn/spelunker.vim' " Spelling -- slow
 Plug 'lifepillar/vim-solarized8'
 Plug 'mbbill/undotree'
-" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -80,7 +81,9 @@ let g:airline_theme='light'
 
 " NerdTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=[]
+let NERDTreeIgnore=['\~$', '\.git$', '\.DS_Store$', '\.meta$']
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
@@ -112,6 +115,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set lazyredraw
+set mouse=n
 set noerrorbells
 set nowrap
 set nospell
@@ -140,6 +144,7 @@ syntax enable
 colorscheme solarized8
 au FocusLost * stopinsert
 au FocusLost * :wa
+au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
 
 
 " Environment Persistence ------------------------------------------------------
@@ -197,15 +202,16 @@ endfunction
 
 
 if executable('rg') && (exists(':Rg') != 2)
+  " fzf#vim#with_preview([[options to wrap], [preview window expression], [toggle-preview keys...]])
   command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg --column --line-number --no-heading --color=always --hidden --smart-case '.(len(<q-args>) > 0 ? <q-args> : '""'), 1,
         \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
         \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
         \   <bang>0)
+
   nnoremap <Leader>zg :Rg!<CR>
 
-  " fzf#vim#with_preview([[options to wrap], [preview window expression], [toggle-preview keys...]])
 endif
 
 let g:fzf_history_dir = g:vim_home . '/fzfHist'
