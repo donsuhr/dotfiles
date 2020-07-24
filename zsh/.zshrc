@@ -1,6 +1,7 @@
 export TERM=xterm-256color
 unsetopt LIST_BEEP
 export KEYTIMEOUT=1
+export EDITOR="/usr/local/bin/vim"
 
 unsetopt nomatch
 

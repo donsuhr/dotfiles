@@ -11,7 +11,7 @@ In a directory with a file named Brewfile run `brew bundle`
 ```bash
 # file named Brewfile
 
-install git certbot bat ccat fzf tmux vim
+install git certbot bat ccat fzf tmux vim gpg rg awsebcli
 install mongodb
 install mysql
 install freetype jpeg libpng gd zlib
@@ -98,8 +98,13 @@ cask install vlc --appdir=/Applications/_video
 `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
 ### tmux plugin manager
-`$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`  
+`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`  
 after, in tmux: `Leader I`
+
+### vim plugin manager
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+after :PlugInstall
+in terminal: `compaudit | xargs chmod g-w,o-w`
 
 
 ### asdf
@@ -108,6 +113,7 @@ after, in tmux: `Leader I`
 `asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git`  
 `bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring`  
 `asdf install nodejs 12.13.0`  
+`asdf global nodejs 12.13.0`
 
 
 ### enable zsh z plugin
