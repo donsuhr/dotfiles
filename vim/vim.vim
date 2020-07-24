@@ -118,7 +118,6 @@ set lazyredraw
 set mouse=n
 set noerrorbells
 set nowrap
-set nospell
 set number relativenumber
 set scrolloff=3
 set shiftwidth=2
@@ -129,10 +128,15 @@ set showmode
 set signcolumn=yes
 set smartcase
 set softtabstop=2
+set nospell
+" set spelllang=en
+" set spell
+" let &spellfile = g:vim_home . '/spell/en.utf-8.add'
 set splitright
 set splitbelow
 set tabstop=2
 set termguicolors
+set timeoutlen=2000
 set title                " change the terminal's title
 set updatetime=750
 set visualbell           " don't beep
@@ -145,7 +149,7 @@ colorscheme solarized8
 au FocusLost * stopinsert
 au FocusLost * :wa
 au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
-
+au FocusGained,BufEnter * :checktime
 
 " Environment Persistence ------------------------------------------------------
 
