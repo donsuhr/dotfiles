@@ -84,6 +84,9 @@ cask install vlc --appdir=/Applications/_video
 ```
 
 ## terminal stuff
+### zsh
+brew install zsh
+
 ### oh-my-zsh
 [instructions](https://github.com/robbyrussell/oh-my-zsh)
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
