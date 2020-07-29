@@ -151,6 +151,12 @@ au FocusLost * :wa
 au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
 au FocusGained,BufEnter * :checktime
 
+if matchstr($ITERM_PROFILE, '\cdark') != ''
+  set background=dark
+else
+  set background=light
+endif
+
 " Environment Persistence ------------------------------------------------------
 
 if has('persistent_undo')         " Store vimundo within .vim/
