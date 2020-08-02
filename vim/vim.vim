@@ -28,56 +28,52 @@ nmap <leader>% :MtaJumpToOtherTag<CR>
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator' " nav from tmux to vim
+Plug 'tmux-plugins/vim-tmux-focus-events' " focus events when in tmux
 Plug 'editorconfig/editorconfig-vim'
 Plug 'valloric/matchtagalways'
 Plug 'junegunn/gv.vim' " Git Commit Browser
 " Plug 'kamykn/spelunker.vim' " Spelling -- slow
 Plug 'lifepillar/vim-solarized8'
+Plug 'arcticicestudio/nord-vim'
 Plug 'mbbill/undotree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/vitality.vim' " focus events when not in tmux
 Plug 'thaerkh/vim-workspace'
-Plug 'tmux-plugins/vim-tmux-focus-events' " focus events when in tmux
 Plug 'tpope/vim-fugitive' " git stuff
 Plug 'tpope/vim-surround' " surround with quotes
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
 " :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'posva/vim-vue'
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+" workspace
 let g:workspace_autosave = 0
-
-" vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
 
 " airline
 set laststatus=2
-let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
 let g:airline_left_sep=''
 let g:airline_powerline_fonts = 1
 let g:airline_right_sep=''
 let g:airline_symbols = {}
 let g:airline_symbols.linenr='' " hide the line number symbol
 let g:airline_symbols.maxlinenr=''
-let g:airline_theme='light'
 
 " NerdTree
 let NERDTreeShowHidden=1
@@ -145,7 +141,6 @@ set wildmenu
 
 filetype plugin indent on
 syntax enable
-colorscheme solarized8
 au FocusLost * stopinsert
 au FocusLost * :wa
 au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
@@ -153,8 +148,12 @@ au FocusGained,BufEnter * :checktime
 
 if matchstr($ITERM_PROFILE, '\cdark') != ''
   set background=dark
+  colorscheme nord
+  let g:airline_theme='nord'
 else
   set background=light
+  colorscheme solarized8
+  let g:airline_theme='light'
 endif
 
 " Environment Persistence ------------------------------------------------------
