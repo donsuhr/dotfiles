@@ -47,6 +47,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 " :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'posva/vim-vue'
+Plug 'toml-lang/toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
