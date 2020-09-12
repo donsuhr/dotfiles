@@ -3,15 +3,15 @@
 ## homebrew
 
 instructions on their [website](http://brew.sh/)         
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-`
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+`brew tap homebrew/cask-versions`
 
 In a directory with a file named Brewfile run `brew bundle`
 
 ```bash
 # file named Brewfile
 
-install git certbot bat ccat fzf tmux vim gpg rg awsebcli
+install git certbot bat ccat fzf tmux vim gpg rg awsebcli exa starship
 install mongodb
 install mysql
 install freetype jpeg libpng gd zlib
