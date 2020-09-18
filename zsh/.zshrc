@@ -24,7 +24,7 @@ fzf_grep_edit(){
     return
   fi
   local match=$(
-  rg --column --line-number --no-heading --color=never --hidden --smart-case  $@ |
+  rg --column --line-number --no-heading --color=never --smart-case  $@ |
     fzf --delimiter : \
     --preview "~/dotfiles/zsh/fzf-bat-preview.sh {1} {2}"
   )
