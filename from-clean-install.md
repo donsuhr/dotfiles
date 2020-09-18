@@ -2,7 +2,7 @@
 
 ## homebrew
 
-instructions on their [website](http://brew.sh/)         
+instructions on their [website](http://brew.sh/)
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 `brew tap homebrew/cask-versions`
 
@@ -11,7 +11,7 @@ In a directory with a file named Brewfile run `brew bundle`
 ```bash
 # file named Brewfile
 
-install git certbot bat ccat fzf tmux vim gpg rg awsebcli exa starship
+install git certbot bat ccat fzf tmux vim gpg rg awsebcli exa starship readline xz
 install mongodb
 install mysql
 install freetype jpeg libpng gd zlib
@@ -20,7 +20,14 @@ install libyaml readline libxslt libtool unixodbc
 install unzip curl gpg
 install rg openssh rsync
 
-cask install quicklook-json qlstephen betterzip qlcolorcode qlmarkdown 
+# similar for wsl
+# sudo apt install bat cargo curl fzf tmux zsh git rg \
+        build-essential libssl-dev zlib1g-dev libbz2-dev \
+        libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+        xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+# cargo install starship exa
+
+cask install quicklook-json qlstephen betterzip qlcolorcode qlmarkdown
 cask install qlprettypatch quicklook-csv WebPQuickLook qlimagesize suspicious-package
 
 # _audio
@@ -84,87 +91,92 @@ cask install vlc --appdir=/Applications/_video
 ```
 
 ## terminal stuff
+
 ### zsh
+
 brew install zsh
 
 ### oh-my-zsh
+
 [instructions](https://github.com/robbyrussell/oh-my-zsh)
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
 ### zsh powerlevel10k theme
+
 `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
 
 ### zsh-syntax-highlighting
+
 `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 
 ### zsh-autosuggestions
+
 `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
 ### tmux plugin manager
-`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`  
-after, in tmux: `Leader I`
+
+`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm` after, in
+tmux: `Leader I`
 
 ### vim plugin manager
-`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
-after :PlugInstall
-in terminal: `compaudit | xargs chmod g-w,o-w`
 
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 
 ### asdf
-[instructions](https://asdf-vm.com/#/core-manage-asdf-vm?id=install-asdf-vm)  
-`git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.7`  
-`asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git`  
-`bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring`  
-`asdf install nodejs 12.13.0`  
-`asdf global nodejs 12.13.0`
 
+[instructions](https://asdf-vm.com/#/core-manage-asdf-vm?id=install-asdf-vm)
+`git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.7`
+`asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git`
+`bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring`
+`asdf install nodejs 12.13.0` `asdf global nodejs 12.13.0`
+`asdf plugin-add python` `asdf install python 3.8.5`
 
 ### enable zsh z plugin
 
 `touch ~/.z`
 
-
 ### set max files
-`echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf`  
-`echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf`   
-`sudo sysctl -w kern.maxfiles=65536`  
-`sudo sysctl -w kern.maxfilesperproc=65536`  
 
+`echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf`
+`echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf`
+`sudo sysctl -w kern.maxfiles=65536` `sudo sysctl -w kern.maxfilesperproc=65536`
 
 ### terminal font
-[RobotoMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip)  
-[SauceCodePro](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip)
 
+[RobotoMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip)
+[SauceCodePro](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip)
 
 ## Change some defaults
 
-`defaults write com.apple.finder QLEnableTextSelection -bool true`  
-`defaults write com.apple.Finder AppleShowAllFiles true`  
-`killall Finder`  
-`defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false`  
+`defaults write com.apple.finder QLEnableTextSelection -bool true`
+`defaults write com.apple.Finder AppleShowAllFiles true` `killall Finder`
+`defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false`
 
 ## Stop upgrade to Catalina
-[source](https://apple.stackexchange.com/questions/367995/how-to-block-updates-to-mac-os-x-catalina)  
-`sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"`   
-`defaults delete com.apple.preferences.softwareupdate LatestMajorOSSeenByUserBundleIdentifier`  
-`defaults write com.apple.systempreferences AttentionPrefBundleIDs 0;killall Dock`  
+
+[source](https://apple.stackexchange.com/questions/367995/how-to-block-updates-to-mac-os-x-catalina)
+`sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"`
+`defaults delete com.apple.preferences.softwareupdate LatestMajorOSSeenByUserBundleIdentifier`
+`defaults write com.apple.systempreferences AttentionPrefBundleIDs 0;killall Dock`
 
 ## mysql
-`ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents`  
-`launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist`  
+
+`ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents`
+`launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist`
 `mysqladmin -u root password "xxx"`
 
 ## php
-edit /etc/apache2/httpd.conf  
-`LoadModule php5_module    /usr/local/Cellar/php56/5.6.4/libexec/apache2/libphp5.so`
 
-  
+edit /etc/apache2/httpd.conf
+`LoadModule php5_module /usr/local/Cellar/php56/5.6.4/libexec/apache2/libphp5.so`
+
 ## jira
+
 - get the [driver](http://dev.mysql.com/downloads/connector/j)
 - copy it to jira app /lib
-- create the database:  `CREATE DATABASE jiradb CHARACTER SET utf8 COLLATE utf8_bin;`
+- create the database:
+  `CREATE DATABASE jiradb CHARACTER SET utf8 COLLATE utf8_bin;`
 - run bin/conf
 - copy and edit launchctl file and set its permissions
 - `launchctl load ./com.atlassian.jira.plist`
-
-
