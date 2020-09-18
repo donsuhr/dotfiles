@@ -260,7 +260,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm2</string>
+	<string>~/Documents</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -311,11 +311,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1200 0 0 1920 1200 </string>
+	<string>424 310 644 422 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>509 -1020 764 1020 509 -1020 764 1020 </string>
+	<string>967 574 644 422 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 0 1920 1200 0 0 1920 1177 </string>
+	<string>871 468 644 422 0 0 1920 1200 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>443 113 1124 678 0 0 1920 1200 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>310 68 644 422 0 0 1920 1200 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>786 56 644 422 0 0 1920 1200 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1858,17 +1864,24 @@
 		<string>SauceCodePro Nerd Font</string>
 		<string>RobotoMono Nerd Font</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1920, 1200}}</string>
+		<key>topLeft</key>
+		<string>{478, 788}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{290, 839}</string>
+		<string>{995, 929}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>C09A417A-7634-44D1-B59E-7A6A76C5B7D7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>27</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2666,7 +2679,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-28T22:39:18Z</date>
+	<date>2020-08-06T20:33:56Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SoundForEsc</key>
