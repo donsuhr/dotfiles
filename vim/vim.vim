@@ -77,10 +77,12 @@ let g:airline_symbols.linenr='' " hide the line number symbol
 let g:airline_symbols.maxlinenr=''
 
 " NerdTree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\~$', '\.git$', '\.DS_Store$', '\.meta$']
-let NERDTreeMinimalUI=1
-let NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['\~$', '\.git$', '\.DS_Store$', '\.meta$', '\.scss\.d\.ts']
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeautodeletebuffer=1
+let g:NERDTreeWinSize=34
+let g:NERDTreeGitStatusUseNerdFonts = 1
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
@@ -88,9 +90,7 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
 " Ale
-let g:ale_fix_on_save = 1
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 1000
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 
@@ -146,6 +146,7 @@ au FocusLost * stopinsert
 au FocusLost * :wa
 au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
 au FocusGained,BufEnter * :checktime
+au FileType tagbar,nerdtree setlocal signcolumn=no
 
 if matchstr($ITERM_PROFILE, '\cdark') != ''
   set background=dark
