@@ -79,4 +79,5 @@ LS_COLORS=$LS_COLORS'ow=01;04;35:'
 export LS_COLORS
 
 bindkey '^\ ' autosuggest-accept
+alias clearclear="clear && printf '\e[3J'"
 
