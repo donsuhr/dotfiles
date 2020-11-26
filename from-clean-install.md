@@ -11,7 +11,7 @@ In a directory with a file named Brewfile run `brew bundle`
 ```bash
 # file named Brewfile
 
-install git certbot bat ccat fzf tmux vim gpg rg awsebcli exa starship readline xz
+install git certbot bat fzf tmux vim gpg rg awsebcli exa starship readline xz gnupg
 install mongodb
 install mysql
 install freetype jpeg libpng gd zlib
@@ -19,13 +19,6 @@ install coreutils automake autoconf openssl
 install libyaml readline libxslt libtool unixodbc
 install unzip curl gpg
 install rg openssh rsync
-
-# similar for wsl
-# sudo apt install bat cargo curl fzf tmux zsh git rg \
-        build-essential libssl-dev zlib1g-dev libbz2-dev \
-        libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-        xz-utils tk-dev libffi-dev liblzma-dev python-openssl
-# cargo install starship exa
 
 cask install quicklook-json qlstephen betterzip qlcolorcode qlmarkdown
 cask install qlprettypatch quicklook-csv WebPQuickLook qlimagesize suspicious-package
@@ -39,13 +32,16 @@ cask install google-backup-and-sync --appdir=/Applications/_docs
 cask install banktivity --appdir=/Applications/_docs
 cask install bbedit --appdir=/Applications/_docs
 cask install calibre --appdir=/Applications/_docs
-cask install gimp --appdir=/Applications/_docs
 cask install ichm --appdir=/Applications/_docs
-cask install inkscape --appdir=/Applications/_docs
 cask install macdown  --appdir=/Applications/_docs
 # cask install on-the-job --appdir=/Applications/_docs
 # cask install openoffice --appdir=/Applications/_docs
 cask install libreoffice --appdir=/Applications/_docs
+
+
+#_graphics
+cask install gimp --appdir=/Applications/_graphics
+cask install inkscape --appdir=/Applications/_graphics
 
 # timing : https://updates.timingapp.com/download/Timing-2018.3.2.dmg
 
