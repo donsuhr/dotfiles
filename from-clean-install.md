@@ -11,7 +11,7 @@ In a directory with a file named Brewfile run `brew bundle`
 ```bash
 # file named Brewfile
 
-install git certbot bat fzf tmux vim gpg rg awsebcli exa starship readline xz gnupg
+install git certbot bat fzf tmux vim gpg rg awsebcli exa starship readline xz gnupg zoxide
 install mongodb
 install mysql
 install freetype jpeg libpng gd zlib
