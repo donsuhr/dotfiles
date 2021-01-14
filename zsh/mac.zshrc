@@ -25,8 +25,6 @@ export CHROME_BIN="/Applications/_internet/Google Chrome.app/Contents/MacOS/Goog
 export FIREFOX_BIN="/Applications/_internet/Firefox.app/Contents/MacOS/firefox-bin"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-ulimit -n 65536 65536
-
 # jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 

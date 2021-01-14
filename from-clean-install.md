@@ -61,10 +61,10 @@ cask install imageoptim --appdir=/Applications/_iNetDev
 #internet
 cask install firefox --appdir=/Applications/_internet
 cask install homebrew/cask-versions/firefox-developer-edition --appdir=/Applications/_internet
-cask install google-chrome --appdir=/Applications/_internet
+install google-chrome --cask --appdir=/Applications/_internet
 cask install google-chrome-canary --appdir=/Applications/_internet
 cask install lastfm --appdir=/Applications/_internet
-cask install postbox --appdir=/Applications/_internet
+install postbox --cask --appdir=/Applications/_internet
 cask install transmission --appdir=/Applications/_internet
 cask install transmit --appdir=/Applications/_internet
 cask install viscosity --appdir=/Applications/_internet
@@ -125,7 +125,8 @@ after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.7`
 `asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git`
 `bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring`
-`asdf install nodejs 12.13.0` `asdf global nodejs 12.13.0`
+`asdf install nodejs 12.13.0`
+`asdf global nodejs 12.13.0`
 `asdf plugin-add python` `asdf install python 3.8.5`
 
 ### enable zsh z plugin
@@ -136,7 +137,8 @@ after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 
 `echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf`
 `echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf`
-`sudo sysctl -w kern.maxfiles=65536` `sudo sysctl -w kern.maxfilesperproc=65536`
+`sudo sysctl -w kern.maxfiles=65536` 
+`sudo sysctl -w kern.maxfilesperproc=65536`
 
 ### terminal font
 
