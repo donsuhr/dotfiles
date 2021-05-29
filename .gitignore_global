@@ -60,3 +60,6 @@ desktop.ini
 .iml
 *.sublime-workspace
 Session.vim
+
+# Intuit Workspace #
+**/ds--*
