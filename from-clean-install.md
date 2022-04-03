@@ -23,6 +23,12 @@ install rg openssh rsync
 cask install quicklook-json qlstephen betterzip qlcolorcode qlmarkdown
 cask install qlprettypatch quicklook-csv WebPQuickLook qlimagesize suspicious-package
 
+xattr -cr ~/Library/QuickLook/*.qlgenerator && \
+qlmanage -r && \
+qlmanage -r cache && \
+killall Finder
+
+# https://stackoverflow.com/questions/14802873/quicklook-html-files-as-text-not-rendered-html
 #peek https://www.bigzlabs.com/peek.html
 
 # _audio
