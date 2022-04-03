@@ -217,8 +217,8 @@ if executable('rg') && (exists(':Rg') != 2)
   command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg --column --line-number --no-heading --color=always --hidden --smart-case '.(len(<q-args>) > 0 ? <q-args> : '""'), 1,
-        \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-        \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
+        \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%', 'ctrl-/')
+        \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', 'ctrl-/'),
         \   <bang>0)
 
   nnoremap <Leader>zg :Rg!<CR>

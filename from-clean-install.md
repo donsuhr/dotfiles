@@ -23,6 +23,8 @@ install rg openssh rsync
 cask install quicklook-json qlstephen betterzip qlcolorcode qlmarkdown
 cask install qlprettypatch quicklook-csv WebPQuickLook qlimagesize suspicious-package
 
+#peek https://www.bigzlabs.com/peek.html
+
 # _audio
 # audacity
 # goldenrecords
@@ -49,6 +51,7 @@ cask install inkscape --appdir=/Applications/_graphics
 #  charles (dont use brew, choose alt jdk version)
 # visual studio code
 cask install dash --appdir=/Applications/_iNetDev
+# https://updates.kaleidoscope.app/v2/prod/Kaleidoscope-2.4.2-1455-sep-7-2021.app.zip
 cask install kaleidoscope --appdir=/Applications/_iNetDev
 cask install postman --appdir=/Applications/_iNetDev
 cask install sourcetree --appdir=/Applications/_iNetDev
