@@ -23,6 +23,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>bd :bp\|bd #<CR>
 nmap <leader>% :MtaJumpToOtherTag<CR>
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 
 
 call plug#begin('~/.vim/plugged')
@@ -144,7 +146,6 @@ filetype plugin indent on
 syntax enable
 au FocusLost * stopinsert
 au FocusLost * :wa
-au BufEnter * if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
 au FocusGained,BufEnter * :checktime
 au FileType tagbar,nerdtree setlocal signcolumn=no
 
