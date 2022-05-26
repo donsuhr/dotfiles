@@ -30,28 +30,23 @@ nmap <leader>a <Plug>(coc-codeaction-selected)
 call plug#begin('~/.vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator' " nav from tmux to vim
-Plug 'tmux-plugins/vim-tmux-focus-events' " focus events when in tmux
 Plug 'editorconfig/editorconfig-vim'
 Plug 'valloric/matchtagalways'
-Plug 'junegunn/gv.vim' " Git Commit Browser
-" Plug 'kamykn/spelunker.vim' " Spelling -- slow
 Plug 'lifepillar/vim-solarized8'
 Plug 'arcticicestudio/nord-vim'
 Plug 'mbbill/undotree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'sjl/vitality.vim' " focus events when not in tmux
-Plug 'thaerkh/vim-workspace'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive' " git stuff
 Plug 'tpope/vim-surround' " surround with quotes
 Plug 'dense-analysis/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
-" :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css coc-spell-checker
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 Plug 'toml-lang/toml'
+" :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css coc-spell-checker
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -218,12 +213,10 @@ if executable('rg') && (exists(':Rg') != 2)
   command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg --column --line-number --no-heading --color=always --hidden --smart-case '.(len(<q-args>) > 0 ? <q-args> : '""'), 1,
-        \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-        \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
+        \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%', 'ctrl-/')
+        \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', 'ctrl-/'),
         \   <bang>0)
-
   nnoremap <Leader>zg :Rg!<CR>
-
 endif
 
 let g:fzf_history_dir = g:vim_home . '/fzfHist'
