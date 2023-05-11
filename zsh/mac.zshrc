@@ -25,11 +25,11 @@ export CHROME_BIN="/Applications/_internet/Google Chrome.app/Contents/MacOS/Goog
 export FIREFOX_BIN="/Applications/_internet/Firefox.app/Contents/MacOS/firefox-bin"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-# jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
 source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
 source /usr/local/opt/fzf/shell/key-bindings.zsh
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
