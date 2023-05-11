@@ -26,6 +26,11 @@ nmap <leader>% :MtaJumpToOtherTag<CR>
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 
+imap <silent> <C-n> <Plug>(copilot-next)
+imap <silent> <C-p> <Plug>(copilot-previous)
+imap <silent> <C-\> <Plug>(copilot-dismiss)
+imap <silent><script><expr> <Nul> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
 
 call plug#begin('~/.vim/plugged')
 
@@ -51,6 +56,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'github/copilot.vim'
+Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
 call plug#end()
 
 " workspace
