@@ -245,6 +245,10 @@
 	<integer>2359296</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
+	<key>NeverWarnAboutShortLivedSessions_03EFAC6E-0CB2-4744-8AAF-AA0FA461097E</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_03EFAC6E-0CB2-4744-8AAF-AA0FA461097E_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_550B11F4-C753-4C17-ACFD-56D38750FB90</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_550B11F4-C753-4C17-ACFD-56D38750FB90_selection</key>
