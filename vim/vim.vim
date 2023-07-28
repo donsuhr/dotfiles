@@ -8,6 +8,7 @@ filetype off                  " required
 
 let mapleader = ","
 nnoremap <Leader>nt :NERDTreeToggle<cr>
+nnoremap <Leader>no :NERDTreeFocus<cr>
 nnoremap <Leader>nf :NERDTreeFind<cr>
 nnoremap <Leader>ut :UndotreeToggle<cr>
 nnoremap <Leader>af :ALEFix<cr>
@@ -87,6 +88,7 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeautodeletebuffer=1
 let g:NERDTreeWinSize=34
 let g:NERDTreeGitStatusUseNerdFonts = 1
+autocmd VimEnter * NERDTree
 
 " NerdCommenter
 let g:NERDSpaceDelims = 1
@@ -147,6 +149,7 @@ set wildmenu
 filetype plugin indent on
 syntax enable
 au FocusLost * stopinsert
+autocmd FocusLost * call feedkeys("\<esc>")
 au FocusLost * :wa
 au FocusGained,BufEnter * :checktime
 au FileType tagbar,nerdtree setlocal signcolumn=no
