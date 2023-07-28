@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# ~/dotfiles/bumpgato.sh ~/dev/pmec
+
 export NVM_DIR=$HOME/.nvm;
 source $NVM_DIR/nvm.sh;
 
