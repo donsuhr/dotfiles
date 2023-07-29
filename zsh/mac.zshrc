@@ -23,7 +23,7 @@ bindkey -s "^[Oo" "/"
 
 export CHROME_BIN="/Applications/_internet/Google Chrome.app/Contents/MacOS/Google Chrome"
 export FIREFOX_BIN="/Applications/_internet/Firefox.app/Contents/MacOS/firefox-bin"
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 source /usr/local/opt/fzf/shell/completion.zsh 2> /dev/null
 source /usr/local/opt/fzf/shell/key-bindings.zsh
