@@ -27,6 +27,20 @@ nmap <leader>% :MtaJumpToOtherTag<CR>
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 imap <silent> <C-n> <Plug>(copilot-next)
 imap <silent> <C-p> <Plug>(copilot-previous)
 imap <silent> <C-\> <Plug>(copilot-dismiss)
