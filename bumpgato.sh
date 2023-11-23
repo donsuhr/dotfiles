@@ -1,6 +1,8 @@
 #!/bin/zsh
 
 # ~/dotfiles/bumpgato.sh ~/dev/pmec
+# ~/dotfiles/bumpgato.sh ~/dev/forge
+# ~/dotfiles/bumpgato.sh ~/dev/gato/packages/ty_23_form_based_pricing
 
 export NVM_DIR=$HOME/.nvm;
 source $NVM_DIR/nvm.sh;
