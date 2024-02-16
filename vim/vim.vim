@@ -44,7 +44,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 imap <silent> <C-n> <Plug>(copilot-next)
 imap <silent> <C-p> <Plug>(copilot-previous)
 imap <silent> <C-\> <Plug>(copilot-dismiss)
-imap <silent><script><expr> <Nul> copilot#Accept("\<CR>")
+if has('nvim')
+  imap <silent><script><expr> <C-space> copilot#Accept("\<CR>")
+else 
+  imap <silent><script><expr> <Nul> copilot#Accept("\<CR>")
+endif
 let g:copilot_no_tab_map = v:true
 
 call plug#begin('~/.vim/plugged')
