@@ -81,3 +81,4 @@ export LS_COLORS
 bindkey '^\ ' autosuggest-accept
 alias clearclear="clear && printf '\e[3J'"
 
+# https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh
