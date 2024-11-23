@@ -77,6 +77,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'github/copilot.vim'
 Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
+Plug 'https://github.com/lbrayner/vim-rzip'
 call plug#end()
 
 " workspace
@@ -118,7 +119,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 
-let g:coc_config_home = '~/dotfiles/vim/coc-settings.json'
+let g:coc_config_home = '~/dotfiles/vim/coc'
 
 set autoindent
 set autoread
