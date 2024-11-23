@@ -1,20 +1,15 @@
 #https://starship.rs/config/
 
-# add_newline = false
-
 [character]
 symbol = "➜"
 error_symbol = "✗"
-use_symbol_for_status = true
 vicmd_symbol = ""
 
-# Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
 
 [git_status]
-stashed="⍟"
-stashed_count.enabled = true
+stashed='⍟$count'
 
 [nodejs]
 style = "fg:#026e00"
