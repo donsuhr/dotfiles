@@ -34,14 +34,16 @@ plugins=(vi-mode zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # ------------------------------------------------------------
-if [ "$(command -v exa)" ]; then
+if [ "$(command -v lsd)" ]; then
     # https://dev.to/22mahmoud/my-terminal-became-more-rusty-4g8l
     unalias -m 'll'
     unalias -m 'l'
     unalias -m 'la'
     unalias -m 'ls'
-    alias ls='exa -G  --color auto --icons -a -s type'
-    alias ll='exa -l --color always --icons -a -s type'
+    alias ls='lsd'
+    alias la='ls -a'
+    alias ll='ls -la'
+    alias lt='ls --tree'
 fi
 
 eval "$(zoxide init zsh)"
