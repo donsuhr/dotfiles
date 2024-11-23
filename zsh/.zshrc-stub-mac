@@ -1,7 +1,11 @@
 DEFAULT_USER="bill"
 
 source $HOME/dotfiles/zsh/.zshrc
-source $HOME/dotfiles/zsh/mac.zshrc
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOME/dotfiles/zsh/things/asdf.zshrc
+source $HOME/dotfiles/zsh/things/asdf.java.zshrc
+source $HOME/dotfiles/zsh/things/browsers.zshrc
+source $HOME/dotfiles/zsh/things/cargo.zshrc
+source $HOME/dotfiles/zsh/things/daskeyboard.zshrc
+source $HOME/dotfiles/zsh/things/fzf.zshrc
+source $HOME/dotfiles/zsh/things/pyenv.zshrc
 

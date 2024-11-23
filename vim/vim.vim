@@ -68,14 +68,14 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'mustache/vim-mustache-handlebars'
 " Plug 'posva/vim-vue'
 Plug 'toml-lang/toml'
-" :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css coc-spell-checker coc-emmit
+" :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css coc-spell-checker coc-emmit coc-prettier coc-eslint
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
 call plug#end()
 
@@ -117,6 +117,8 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+
+let g:coc_config_home = '~/dotfiles/vim/coc-settings.json'
 
 set autoindent
 set autoread
@@ -235,6 +237,8 @@ function! FlashLine()
   endfor
 endfunction
 
+command! -nargs=0 Format :CocCommand prettier.formatFile
+command! -nargs=0 Lint :CocCommand eslint.executeAutofix
 
 if executable('rg') && (exists(':Rg') != 2)
   " fzf#vim#with_preview([[options to wrap], [preview window expression], [toggle-preview keys...]])

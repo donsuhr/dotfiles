@@ -1,6 +1,6 @@
 let b:ale_linter_aliases =  ['vue', 'css', 'html', 'javascript']
-let b:ale_fixers = ['prettier', 'eslint', 'stylelint']
-let b:ale_linters = ['eslint', 'stylelint']
+let b:ale_fixers = ['stylelint']
+let b:ale_linters = ['stylelint']
 
 set path=.,src
 set suffixesadd=.js,.jsx,.vue

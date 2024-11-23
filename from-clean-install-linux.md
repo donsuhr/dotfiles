@@ -7,5 +7,5 @@
         xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 ```
 # curl https://sh.rustup.rs -sSf | sh      
-# cargo install starship exa cargo-outdated zoxide bat
+# cargo install starship lsd cargo-outdated zoxide bat
 
