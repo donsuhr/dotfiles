@@ -46,7 +46,7 @@ imap <silent> <C-p> <Plug>(copilot-previous)
 imap <silent> <C-\> <Plug>(copilot-dismiss)
 if has('nvim')
   imap <silent><script><expr> <C-space> copilot#Accept("\<CR>")
-else 
+else
   imap <silent><script><expr> <Nul> copilot#Accept("\<CR>")
 endif
 let g:copilot_no_tab_map = v:true
