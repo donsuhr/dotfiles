@@ -85,17 +85,22 @@ let g:workspace_autosave = 0
 
 " airline
 set laststatus=2
-let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 0
+let g:airline#extensions#coc#show_coc_status = 0
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#wordcount#enabled = 0
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_left_sep=''
 let g:airline_powerline_fonts = 1
 let g:airline_right_sep=''
+let g:airline_section_b=''
+let g:airline_section_y=''
+let g:airline_skip_empty_sections = 1
 let g:airline_symbols = {}
 let g:airline_symbols.linenr='' " hide the line number symbol
 let g:airline_symbols.maxlinenr=''
