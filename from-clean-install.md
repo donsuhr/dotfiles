@@ -11,24 +11,22 @@ In a directory with a file named Brewfile run `brew bundle`
 ```bash
 # file named Brewfile
 
-install git certbot bat fzf tmux vim gpg rg awsebcli lsd starship readline xz gnupg zoxide
-install mongodb
-install mysql
-install freetype jpeg libpng gd zlib
-install coreutils automake autoconf openssl
-install libyaml readline libxslt libtool unixodbc
-install unzip curl gpg
-install rg openssh rsync
+bat
+certbot
+curl
+fzf
+git
+lsd
+rg
+rsync
+starship
+tmux
+vim
+zoxide
 
-cask install quicklook-json qlstephen betterzip qlcolorcode qlmarkdown
-cask install qlprettypatch quicklook-csv WebPQuickLook qlimagesize suspicious-package
-
-xattr -cr ~/Library/QuickLook/*.qlgenerator && \
-qlmanage -r && \
-qlmanage -r cache && \
-killall Finder
 
 # https://stackoverflow.com/questions/14802873/quicklook-html-files-as-text-not-rendered-html
+
 #peek https://www.bigzlabs.com/peek.html
 
 # _audio
@@ -46,7 +44,6 @@ cask install macdown  --appdir=/Applications/_docs
 # cask install openoffice --appdir=/Applications/_docs
 cask install libreoffice --appdir=/Applications/_docs
 
-
 #_graphics
 cask install gimp --appdir=/Applications/_graphics
 cask install inkscape --appdir=/Applications/_graphics
@@ -55,14 +52,9 @@ cask install inkscape --appdir=/Applications/_graphics
 
 # _iNetDev
 #  charles (dont use brew, choose alt jdk version)
-# visual studio code
-cask install dash --appdir=/Applications/_iNetDev
 # https://updates.kaleidoscope.app/v2/prod/Kaleidoscope-2.4.2-1455-sep-7-2021.app.zip
 cask install kaleidoscope --appdir=/Applications/_iNetDev
 cask install postman --appdir=/Applications/_iNetDev
-cask install sourcetree --appdir=/Applications/_iNetDev
-# cask install tower2 --appdir=/Applications/_iNetDev
-cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask-versions/master/Casks/tower2.rb --appdir=/Applications/_iNetDev
 cask install webstorm --appdir=/Applications/_iNetDev
 cask install versions --appdir=/Applications/_iNetDev
 cask install imageoptim --appdir=/Applications/_iNetDev
@@ -76,17 +68,13 @@ cask install lastfm --appdir=/Applications/_internet
 install postbox --cask --appdir=/Applications/_internet
 cask install transmission --appdir=/Applications/_internet
 cask install transmit --appdir=/Applications/_internet
-cask install viscosity --appdir=/Applications/_internet
-cask install microsoft-teams --appdir=/Applications/_internet
 
 #system
-cask install airserver --appdir=/Applications/_system
 cask install bitwarden --appdir=/Applications/_system
 cask install cleanmymac --appdir=/Applications/_system
-cask install duet --appdir=/Applications/_system
-# docker
 cask install iterm2 --appdir=/Applications/_system
 cask install parallels --appdir=/Applications/_system
+#alfred
 
 #video
 cask install handbreak --appdir=/Applications/_video
@@ -96,6 +84,7 @@ cask install vlc --appdir=/Applications/_video
 ```
 
 ###
+
 Old IE vms: https://gist.github.com/zmwangx/e728c56f428bc703c6f6
 
 ## terminal stuff
@@ -108,10 +97,6 @@ brew install zsh
 
 [instructions](https://github.com/robbyrussell/oh-my-zsh)
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-
-### zsh powerlevel10k theme
-
-`git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
 
 ### zsh-syntax-highlighting
 
@@ -149,7 +134,7 @@ after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 
 `echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf`
 `echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf`
-`sudo sysctl -w kern.maxfiles=65536` 
+`sudo sysctl -w kern.maxfiles=65536`
 `sudo sysctl -w kern.maxfilesperproc=65536`
 
 ### terminal font
@@ -159,9 +144,9 @@ after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 
 ## Change some defaults
 
-`defaults write com.apple.finder QLEnableTextSelection -bool true`
-`defaults write com.apple.Finder AppleShowAllFiles true` `killall Finder`
-`defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false`
+- `defaults write com.apple.Finder AppleShowAllFiles true` `killall Finder`
+- have TextEdit open a new document: `defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false`
+- verbose boot: `sudo nvram boot-args=“-v”`
 
 ## Stop upgrade to Catalina
 
