@@ -107,6 +107,9 @@ brew install zsh
 
 `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
+### auto update custom plugins
+https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh
+
 ### tmux plugin manager
 
 `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm` after, in
