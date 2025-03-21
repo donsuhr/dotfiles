@@ -23,6 +23,7 @@ starship
 tmux
 vim
 zoxide
+asdf
 
 
 # https://stackoverflow.com/questions/14802873/quicklook-html-files-as-text-not-rendered-html
@@ -119,7 +120,7 @@ after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 ### asdf
 
 [instructions](https://asdf-vm.com/#/core-manage-asdf-vm?id=install-asdf-vm)
-`git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.7`
+`brew install asdf`
 `asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git`
 `bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring`
 `asdf install nodejs 12.13.0`

@@ -2,7 +2,6 @@ DEFAULT_USER="bill"
 
 source $HOME/dotfiles/zsh/.zshrc
 source $HOME/dotfiles/zsh/things/asdf.zshrc
-source $HOME/dotfiles/zsh/things/asdf.java.zshrc
 source $HOME/dotfiles/zsh/things/browsers.zshrc
 source $HOME/dotfiles/zsh/things/cargo.zshrc
 source $HOME/dotfiles/zsh/things/daskeyboard.zshrc
