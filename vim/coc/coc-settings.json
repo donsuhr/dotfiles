@@ -22,5 +22,10 @@
     "yaml"
   ],
   "eslint.autoFixOnSave": true,
-  "cSpell.userWords": ["pygame"]
+  "cSpell.userWords": [
+    "pygame"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
