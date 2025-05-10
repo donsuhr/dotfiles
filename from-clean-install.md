@@ -151,6 +151,8 @@ after :PlugInstall in terminal: `compaudit | xargs chmod g-w,o-w`
 - `defaults write com.apple.Finder AppleShowAllFiles true` `killall Finder`
 - have TextEdit open a new document: `defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false`
 - verbose boot: `sudo nvram boot-args=“-v”`
+- `defaults write -g InitialKeyRepeat -float 10.0` # normal minimum is 15 (225 ms)
+- `defaults write -g KeyRepeat -float 1.0` # normal minimum is 2 (30 ms)
 
 ## Stop upgrade to Catalina
 
