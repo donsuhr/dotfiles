@@ -1,0 +1,31 @@
+{
+  "html.autoClosingTags": false,
+  "diagnostic.virtualText": false,
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.parameterTypes": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "graphql",
+    "handlebars",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "less",
+    "markdown",
+    "scss",
+    "svelte",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "yaml"
+  ],
+  "eslint.autoFixOnSave": true,
+  "cSpell.userWords": [
+    "pygame"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
