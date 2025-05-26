@@ -41,15 +41,24 @@ endfunction
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-imap <silent> <C-n> <Plug>(copilot-next)
-imap <silent> <C-p> <Plug>(copilot-previous)
-imap <silent> <C-\> <Plug>(copilot-dismiss)
+" imap <silent> <C-n> <Plug>(copilot-next)
+" imap <silent> <C-p> <Plug>(copilot-previous)
+" imap <silent> <C-\> <Plug>(copilot-dismiss)
+imap <silent> <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <silent> <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <silent> <C-\>   <Cmd>call codeium#Clear()<CR>
+
 if has('nvim')
-  imap <silent><script><expr> <C-space> copilot#Accept("\<CR>")
+  " imap <silent><script><expr> <C-space> copilot#Accept("\<CR>")
+  imap <script><silent><nowait><expr> <C-space> codeium#Accept()
 else
-  imap <silent><script><expr> <Nul> copilot#Accept("\<CR>")
+  " imap <silent><script><expr> <Nul> copilot#Accept("\<CR>")
+  imap <script><silent><nowait><expr> <Nul> codeium#Accept()
 endif
 let g:copilot_no_tab_map = v:true
+let g:codeium_disable_bindings = 1
+let g:codeium_enabled = v:false
+
 
 call plug#begin('~/.vim/plugged')
 
@@ -65,7 +74,7 @@ Plug 'tpope/vim-fugitive' " git stuff
 Plug 'tpope/vim-surround' " surround with quotes
 Plug 'dense-analysis/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'mustache/vim-mustache-handlebars'
+" Plug 'mustache/vim-mustache-handlebars'
 " Plug 'posva/vim-vue'
 Plug 'toml-lang/toml'
 " :CocInstall coc-git coc-highlight coc-vetur coc-html coc-tsserver coc-json coc-css coc-spell-checker coc-emmit coc-prettier coc-eslint
@@ -76,7 +85,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'github/copilot.vim'
-Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
+Plug 'Exafunction/windsurf.vim'
+" Plug 'https://github.com/martinda/Jenkinsfile-vim-syntax.git'
 Plug 'https://github.com/lbrayner/vim-rzip'
 call plug#end()
 
