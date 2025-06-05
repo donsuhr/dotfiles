@@ -22,10 +22,20 @@
     "yaml"
   ],
   "eslint.autoFixOnSave": true,
-  "cSpell.userWords": [
-    "pygame"
-  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "cSpell.userWords": [
+    "Debouncer",
+    "Typeahead",
+    "pygame"
+  ],
+  "tsserver.useLocalTsdk": true,
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "workspace.workspaceFolderCheckCwd": false,
+  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.autoClosingTags": false,
+  "eslint.migration.2_x": "off"
 }
