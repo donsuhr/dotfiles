@@ -1,11 +1,14 @@
 {
   "html.autoClosingTags": false,
   "diagnostic.virtualText": false,
+
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
   "pyright.inlayHints.parameterTypes": false,
+
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "cucumber",
     "graphql",
     "handlebars",
     "html",
@@ -21,16 +24,35 @@
     "vue",
     "yaml"
   ],
-  "eslint.autoFixOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+  "cSpell.enabledLanguageIds": [
+    "css",
+    "cucumber",
+    "graphql",
+    "handlebars",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "less",
+    "markdown",
+    "scss",
+    "svelte",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "yaml"
+  ],
   "cSpell.userWords": [
     "Debouncer",
     "PAYG",
     "Typeahead",
     "pygame"
   ],
+
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "tsserver.useLocalTsdk": true,
   "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
   "eslint.packageManager": "yarn",
