@@ -1,36 +1,29 @@
-export TERM=xterm-256color
 export EDITOR="/usr/local/bin/vim"
 export ZSH=$HOME/.oh-my-zsh
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-LS_COLORS=$LS_COLORS'ow=01;04;35:'
-export LS_COLORS
+export BAT_THEME="Nord"
 
-unsetopt nomatch
-unsetopt LIST_BEEP
-export KEYTIMEOUT=1
-#stop deleting windows
-setopt ignoreeof
-setopt nocasematch
-
-# ------------------------------------------------------------
-
-if [[ "${ITERM_PROFILE}" =~ dark ]]
-then
-    export BAT_THEME="Nord"
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
-  else 
-    export BAT_THEME="Monokai Extended Light"
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=188"
-fi
-unsetopt nocasematch
-
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
+export DISABLE_AUTO_UPDATE="true" # use `omz update` instead
+
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]
+then
+  source $HOME/dotfiles/zsh/things/iterm.zshrc
+fi
+
+unsetopt LIST_BEEP # dont bell when TAB produces a list
+export KEYTIMEOUT=1 # Faster ESC in vim
+setopt ignoreeof # stop accidentally deleting windows with CtrlD
 
 # ------------------------------------------------------------
 
 # https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh
-plugins=(vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(
+  vi-mode
+  zsh-autosuggestions
+  zsh-syntax-highlighting # recommended last
+)
 source $ZSH/oh-my-zsh.sh
 
 # ------------------------------------------------------------
