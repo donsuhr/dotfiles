@@ -311,7 +311,7 @@
 	<key>description</key>
 	<string>Search browser tabs from Chrome, Brave, &amp; Safari</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Browser Tabs</string>
 	<key>objects</key>

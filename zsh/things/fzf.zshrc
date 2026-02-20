@@ -26,3 +26,7 @@ alias fzfs='fzf_grep_edit'
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+
+# example
+# fzfs --glob "*.js" "hello world"

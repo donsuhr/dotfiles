@@ -1,4 +1,3 @@
-"lots from https://github.com/rlue/.vim/blob/master/vimrc
 let g:vim_home = expand('<sfile>:p:h')
 let &runtimepath.=','.g:vim_home
 let &runtimepath.=','.g:vim_home.'/after'
@@ -72,7 +71,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive' " git stuff
 Plug 'tpope/vim-surround' " surround with quotes
-Plug 'dense-analysis/ale' " linting
+" Plug 'dense-analysis/ale' " linting
 Plug 'xuyuanp/nerdtree-git-plugin'
 " Plug 'mustache/vim-mustache-handlebars'
 " Plug 'posva/vim-vue'
@@ -136,10 +135,10 @@ let g:ale_sign_warning = '⚠'
 
 set autoindent
 set autoread
-set background=light
 set backspace=indent,eol,start
 set backup
 set backupcopy=yes
+set belloff=all
 set clipboard=unnamed
 set conceallevel=2
 set cursorline
@@ -176,7 +175,6 @@ set termguicolors
 set timeoutlen=2000
 set title                " change the terminal's title
 set updatetime=750
-set visualbell           " don't beep
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu
 
