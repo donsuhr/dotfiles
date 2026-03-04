@@ -1,0 +1,5 @@
+require('zorg.config.options').setup()
+require('zorg.config.keymap')
+require('zorg.config.lazy')
+require('zorg.config.color')
+require('zorg.config.autocmd')

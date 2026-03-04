@@ -6,6 +6,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 export DISABLE_AUTO_UPDATE="true" # use `omz update` instead
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ "$TERM_PROGRAM" == "iTerm.app" ]]
 then

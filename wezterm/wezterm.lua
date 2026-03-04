@@ -10,7 +10,7 @@ config.font = wezterm.font {
   family = 'RobotoMono Nerd Font',
   weight = 'Light'
 }
-config.line_height = .9
+config.line_height = 0.95
 
 config.color_scheme = 'nord'
 
