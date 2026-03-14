@@ -3,6 +3,12 @@
     "zorg"
   ],
   "words": [
-    "Nord"
+    "Nord",
+    "nvim",
+    "typemod",
+    "autocmd",
+    "keymap",
+    "Avante",
+    "undercurl"
   ]
 }
