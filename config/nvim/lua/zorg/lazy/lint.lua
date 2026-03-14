@@ -1,14 +1,36 @@
 return {
-  "mfussenegger/nvim-lint",
-  enabled = true,
-  opts = {
-    linters_by_ft = {
-      typescript = { "eslint_d" },
-      typescriptreact = { "eslint_d" },
-      javascript = { "eslint_d" },
-      javascriptreact = { "eslint_d" },
-    },
-  },
-  config = function()
-  end
+	"mfussenegger/nvim-lint",
+	enabled = true,
+	event = {
+		"BufReadPre",
+		"BufNewFile",
+	},
+	config = function()
+		local lint = require("lint")
+		lint.linters_by_ft = {
+			typescript = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
+			javascript = { "eslint_d" },
+			javascriptreact = { "eslint_d" },
+			css = { "eslint_d" },
+			markdown = { "markdownlint" },
+			quarto = { "markdownlint" },
+		}
+
+		lint.linters.markdownlint.args = {
+			"--fix",
+			"--disable",
+			"MD013",
+			"--",
+		}
+
+		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "TextChanged" }, {
+			group = lint_augroup,
+			callback = function()
+				lint.try_lint()
+			end,
+		})
+	end,
 }
