@@ -1,7 +1,6 @@
 return {
 	"brenoprata10/nvim-highlight-colors",
 	enabled = true,
-	opts = {},
 	config = function()
 		local hlc = require("nvim-highlight-colors")
 		hlc.turnOff()

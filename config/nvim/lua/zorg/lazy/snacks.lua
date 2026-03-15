@@ -20,7 +20,8 @@ return {
 		terminal = { enable = false },
 		words = { enabled = false },
 	},
-	config = function()
+	config = function(_, opts)
+		require("snacks").setup(opts)
 		Snacks.toggle.profiler():map("<leader>pp")
 		-- Toggle the profiler highlights
 		Snacks.toggle.profiler_highlights():map("<leader>ph")

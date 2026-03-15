@@ -1,7 +1,6 @@
 return {
 	"stevearc/conform.nvim",
 	enabled = true,
-	opts = {},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local jsFmt = { "prettierd" }

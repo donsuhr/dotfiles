@@ -8,9 +8,8 @@ keymap("n", "<leader>bd", ":bp | bd #<CR>", opts)
 keymap("n", "<leader>ci", "<Cmd>normal gcc<CR>", opts)
 keymap("v", "<leader>ci", ":'<,'>normal gcc<Cr>", { desc = "Toggle Comment Visual Mode", silent = true })
 
-vim.keymap.set("n", "K", function()
+keymap("n", "K", function()
 	vim.lsp.buf.hover({
-		border = "single",
 		max_width = 80,
 	})
-end, { desc = "Hover documentation with custom style" })
+end, { desc = "Hover documentation" })

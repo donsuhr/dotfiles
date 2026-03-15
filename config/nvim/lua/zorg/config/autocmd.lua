@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 		vim.diagnostic.open_float({
 			scope = "cursor",
 			focusable = true,
+			max_width = 80,
 			close_events = { "CursorMoved", "CursorMovedI", "BufHidden", "InsertCharPre", "WinLeave" },
 		})
 	end,
