@@ -1,0 +1,16 @@
+
+font-family = "RobotoMono Nerd Font"
+font-style = "Light"
+font-size = 13
+
+theme = nord
+
+font-feature = -liga
+macos-non-native-fullscreen = true
+adjust-cell-height = 2
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = background
+

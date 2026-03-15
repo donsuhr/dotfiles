@@ -14,6 +14,7 @@ ITERM_PROFILE = 'dark'
 [font]
 size = 13.0
 offset.y = 2
+offset.x = 1
 
 [font.bold]
 family = "RobotoMono Nerd Font"
