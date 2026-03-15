@@ -8,13 +8,9 @@ return {
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
-			typescript = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
-			javascript = { "eslint_d" },
-			javascriptreact = { "eslint_d" },
-			css = { "eslint_d" },
-			markdown = { "markdownlint" },
-			quarto = { "markdownlint" },
+			-- js linting in lsp causes duplicate errors here
+			-- css = { "eslint_d" },
+			markdown = { "markdownlint-cli2" },
 		}
 
 		lint.linters.markdownlint.args = {

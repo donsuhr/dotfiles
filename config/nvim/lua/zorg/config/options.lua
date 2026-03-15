@@ -41,6 +41,7 @@ opt.undodir = vim.fn.stdpath("data") .. "/undo"
 opt.undofile = true
 opt.undolevels = 2000
 opt.updatetime = 750
+opt.exrc = true
 opt.wrap = false
 vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"

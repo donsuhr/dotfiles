@@ -5,18 +5,19 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	opts = {
-		profiler = { enabled = false },
 		bigfile = { enabled = false },
 		dashboard = { enabled = false },
 		explorer = { enabled = false },
 		indent = { enabled = false },
 		input = { enabled = false },
-		picker = { enabled = true },
 		notifier = { enabled = false },
+		picker = { enabled = true },
+		profiler = { enabled = false },
 		quickfile = { enabled = false },
 		scope = { enabled = false },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false, refresh = 1000 },
+		terminal = { enable = false },
 		words = { enabled = false },
 	},
 	config = function()

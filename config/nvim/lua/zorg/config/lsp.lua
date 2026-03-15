@@ -76,7 +76,6 @@ vim.diagnostic.config({
 	},
 })
 
-
 vim.keymap.set("n", "<leader>dn", function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Next diagnostic" })
@@ -90,4 +89,3 @@ vim.keymap.set("n", "dc", function()
 end, { desc = "Current Diagnostic" })
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr, desc = "rename" })
-

@@ -9,8 +9,7 @@ mods = "Command"
 action = "ToggleSimpleFullscreen"
 
 [env]
-# Use "xterm-256color" if you have issues with "alacritty"
-term = "xterm-256color"
+ITERM_PROFILE = 'dark'
 
 [font]
 size = 13.0

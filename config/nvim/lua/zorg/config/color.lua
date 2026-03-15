@@ -37,10 +37,12 @@ hl(0, "BlinkCmpMenuBorder", { bg = "NONE", fg = nord.nord10_gui })
 hl(0, "BlinkCmpMenuSelection", { bg = nord.nord15_gui, fg = nord.nord0_gui })
 hl(0, "BlinkCmpScrollBarThumb", { fg = nord.nord10_gui, bg = nord.nord10_gui })
 hl(0, "BlinkCmpSource", { fg = nord.nord4_gui, bg = "NONE" })
+hl(0, "BlinkCmpGhostText", { fg = "#616E88", bg = "NONE" })
 hl(0, "DiagnosticUnderlineError", { sp = nord.nord11_gui, undercurl = true })
 hl(0, "DiagnosticUnderlineInfo", { sp = nord.nord15_gui, undercurl = true })
 hl(0, "DiagnosticUnderlineWarn", { sp = nord.nord13_gui, undercurl = true })
 hl(0, "FloatBorder", { bg = "NONE", fg = nord.nord10_gui })
+hl(0, "jsonQuote", { bg = "NONE", fg = nord.nord14_gui })
 hl(0, "LspSignatureActiveParameter", {
 	fg = normal_colors.fg,
 	bold = true,
