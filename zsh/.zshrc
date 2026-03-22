@@ -11,7 +11,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ "$TERM_PROGRAM" == "iTerm.app" ]]
 then
-  source $HOME/dotfiles/zsh/things/iterm.zshrc
+  source "$HOME/dotfiles/zsh/things/iterm.zshrc"
 fi
 
 unsetopt LIST_BEEP # dont bell when TAB produces a list
@@ -26,7 +26,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting # recommended last
 )
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # ------------------------------------------------------------
 if [ "$(command -v lsd)" ]; then

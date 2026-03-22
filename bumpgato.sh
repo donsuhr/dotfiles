@@ -5,7 +5,7 @@
 # ~/dotfiles/bumpgato.sh ~/dev/gato/packages/ty_23_form_based_pricing
 
 export NVM_DIR=$HOME/.nvm;
-source $NVM_DIR/nvm.sh;
+source "$NVM_DIR/nvm.sh";
 
 VERSION_STRING='"version": '
 CURR_VERSION=$(awk -F \" '/"version": ".+"/ { print $4; exit; }' package.json)
@@ -28,13 +28,13 @@ yarn
 npm run build
 npm pack
 
-cd $TARGET_DIR
+cd "$TARGET_DIR"
 echo "PWD: $PWD"
 nvm use
-yarn add $CWD/$BUNDLE_PREFIX-${NEXT_VERSION}.tgz
+yarn add "$CWD/$BUNDLE_PREFIX-${NEXT_VERSION}.tgz"
 # ./bump.sh
 
-cd $CWD
+cd "$CWD"
 nvm use
 
 echo '\a'

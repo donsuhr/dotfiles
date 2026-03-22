@@ -13,3 +13,11 @@
 /alfred/Alfred.alfredpreferences/workflows/user.workflow.DFFB33B7-8BCA-450B-B7FB-569D39149687
 /alfred/Alfred.alfredpreferences/workflows/user.workflow.6C81BDE1-FF0A-4F1D-9DBA-C525AA7492F9
 /config/nvim/lazy-lock.json
+
+# Secrets
+.env
+.env.*
+*.key
+*secret*
+*token*
+*credentials*
