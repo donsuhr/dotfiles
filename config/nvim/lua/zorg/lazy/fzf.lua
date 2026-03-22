@@ -2,7 +2,19 @@ return {
 	"ibhagwan/fzf-lua",
 	enabled = true,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	config = function()
+	opts = {
+		lsp = {
+			code_actions = {
+				winopts = {
+					preview = {
+						layout = "vertical",
+					},
+				},
+			},
+		},
+	},
+	config = function(_, opts)
+		require("fzf-lua").setup(opts)
 		require("fzf-lua").register_ui_select({})
 
 		local keymap = vim.keymap.set

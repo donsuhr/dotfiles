@@ -28,13 +28,19 @@ return {
 		signature = { enabled = true },
 
 		sources = {
-			default = { "avante", "lsp", "path", "snippets", "buffer" },
+			-- default = { "avante", "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer" },
 			providers = {
+				--[[
 				avante = {
 					module = "blink-cmp-avante",
 					name = "Avante",
 					opts = {},
 				},
+        ]]
+			},
+			per_filetype = {
+				codecompanion = { "codecompanion" },
 			},
 		},
 

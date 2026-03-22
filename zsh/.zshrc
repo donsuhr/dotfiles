@@ -1,7 +1,8 @@
 export EDITOR="/usr/local/bin/vim"
 export ZSH=$HOME/.oh-my-zsh
 export BAT_THEME="Nord"
-
+export TERM=xterm-256color
+export COLORTERM=truecolor
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_USE_ASYNC=true

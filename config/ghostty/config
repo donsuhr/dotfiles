@@ -13,4 +13,8 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 window-padding-color = background
+window-width = 80
+window-height = 24
+window-save-state = 'never'
 
+env = ITERM_PROFILE = 'dark'

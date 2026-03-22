@@ -19,6 +19,7 @@ return {
 				"svelte",
 				"typst",
 				"vue",
+				"yaml",
 			})
 			:wait(30000)
 	end,

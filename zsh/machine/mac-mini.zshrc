@@ -15,3 +15,5 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:/Applications/_system/WezTerm.app/Contents/MacOS"
 
+# opencode
+export PATH=/Users/bill/.opencode/bin:$PATH

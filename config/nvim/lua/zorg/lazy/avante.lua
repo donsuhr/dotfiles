@@ -1,6 +1,6 @@
 return {
 	"yetone/avante.nvim",
-	enabled = true,
+	enabled = false,
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	-- ⚠️ must add this setting! ! !
 	build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
@@ -21,8 +21,26 @@ return {
 		},
 		mode = "legacy",
 
-		-- for example
-		provider = "claude",
+		{
+			acp_providers = {
+				["opencode"] = {
+					command = "opencode",
+					args = { "acp" },
+				},
+			},
+			--[[
+			["claude-code"] = {
+				command = "npx",
+				args = { "@zed-industries/claude-code-acp" },
+				env = {
+					NODE_NO_WARNINGS = "1",
+					ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY"),
+				},
+			},
+      ]]
+		},
+
+		--[[	provider = "claude",
 		providers = {
 			claude = {
 				endpoint = "https://api.anthropic.com",
@@ -44,6 +62,7 @@ return {
 				},
 			},
 		},
+    ]]
 		windows = {
 			width = 24,
 			ask = {
