@@ -1,7 +1,7 @@
 #https://starship.rs/config/
 
 [character]
-symbol = "➜"
+success_symbol = "➜"
 error_symbol = "✗"
 vicmd_symbol = ""
 
@@ -13,3 +13,6 @@ stashed='⍟$count'
 
 [nodejs]
 style = "fg:#026e00"
+
+# ln -s /real/path /linked/path
+# ln -s /Users/xxx/dotfiles/config/starship.toml /Users/xxx/.config/starship.toml
