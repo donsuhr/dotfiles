@@ -7,6 +7,7 @@
   "editor.minimap.enabled": false,
   "explorer.autoReveal": false,
   "files.autoSave": "onWindowChange",
+  "git.autofetch": true,
   "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": false,
   "gitlens.views.scm.grouped.views": {
@@ -43,90 +44,39 @@
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        ":"
-      ],
-      "commands": [
-        "workbench.action.showCommands"
-      ]
+      "before": ["<leader>", "z", "g"],
+      "commands": ["workbench.view.search"]
     },
     {
-      "before": [
-        "<leader>",
-        "z",
-        "g"
-      ],
-      "commands": [
-        "workbench.view.search"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "i"
-      ],
-      "commands": [
-        "editor.action.commentLine"
-      ],
+      "before": ["<leader>", "c", "i"],
+      "commands": ["editor.action.commentLine"],
       "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "before": [
-        "<leader>",
-        "n",
-        "f"
-      ],
-      "commands": [
-        "workbench.files.action.showActiveFileInExplorer"
-      ]
+      "before": ["<leader>", "n", "f"],
+      "commands": ["workbench.files.action.showActiveFileInExplorer"]
     },
     {
-      "before": [
-        "g",
-        "r"
-      ],
-      "commands": [
-        "editor.action.goToReferences"
-      ]
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
     },
     {
-      "before": [
-        "<C-h>"
-      ],
-      "after": [
-        "<C-w>",
-        "h"
-      ]
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
     },
     {
-      "before": [
-        "<C-j>"
-      ],
-      "after": [
-        "<C-w>",
-        "j"
-      ]
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"]
     },
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "<C-w>",
-        "k"
-      ]
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"]
     },
     {
-      "before": [
-        "<C-l>"
-      ],
-      "after": [
-        "<C-w>",
-        "l"
-      ]
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
     }
   ],
-  "window.customTitleBarVisibility": "never",
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "window.customTitleBarVisibility": "never"
 }
