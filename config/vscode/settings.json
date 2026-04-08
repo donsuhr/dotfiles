@@ -27,7 +27,6 @@
   "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Lt'",
   "terminal.integrated.initialHint": false,
   "window.commandCenter": false,
-  "window.customTitleBarVisibility": "never",
   "window.density.editorTabHeight": "compact",
   "window.nativeFullScreen": false,
   "workbench.activityBar.compact": true,
@@ -127,5 +126,7 @@
         "l"
       ]
     }
-  ]
+  ],
+  "window.customTitleBarVisibility": "never",
+  "extensions.ignoreRecommendations": true
 }
