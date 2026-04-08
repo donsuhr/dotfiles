@@ -2,7 +2,6 @@ DEFAULT_USER="dsuhr"
 
 source $HOME/dotfiles/zsh/.zshrc
 source $HOME/dotfiles/zsh/things/browsers.zshrc
-source $HOME/dotfiles/zsh/things/daskeyboard.zshrc
 source $HOME/dotfiles/zsh/things/fzf.zshrc
 source $HOME/dotfiles/zsh/things/nvm.zshrc
 source $HOME/dotfiles/zsh/things/nvm-cd-autorun.zshrc
