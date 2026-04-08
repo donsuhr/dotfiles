@@ -2,12 +2,39 @@ return {
 	"ibhagwan/fzf-lua",
 	enabled = true,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	---@module "fzf-lua"
+	---@type fzf-lua.Config|{}
+	---@diagnostic disable: missing-fields
 	opts = {
 		lsp = {
 			code_actions = {
 				winopts = {
 					preview = {
 						layout = "vertical",
+					},
+				},
+			},
+		},
+		git_opts = {
+			previewer = "delta", -- Requires delta to be in path
+		},
+		git = {
+			status = {
+				-- preview_pager = "delta --width ${FZF_PREVIEW_COLUMNS:-$COLUMNS}",
+				previewer = "delta",
+			},
+			commits = {
+				-- preview_pager = "delta --width ${FZF_PREVIEW_COLUMNS:-$COLUMNS}",
+				previewer = "delta",
+			},
+
+			bcommits = {
+				winopts = {
+					width = 0.95,
+					height = 0.95,
+					border = "rounded",
+					preview = {
+						horizontal = "right:74%",
 					},
 				},
 			},

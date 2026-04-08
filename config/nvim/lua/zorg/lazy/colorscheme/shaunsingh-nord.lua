@@ -25,7 +25,7 @@ return {
 				hl(0, "BlinkCmpKind", { fg = nord.nord4_gui, bg = "NONE" })
 				hl(0, "BlinkCmpMenu", { bg = "NONE", fg = nord.nord4_gui })
 				hl(0, "BlinkCmpMenuBorder", { bg = "NONE", fg = nord.nord10_gui })
-				hl(0, "BlinkCmpMenuSelection", { bg = nord.nord15_gui, fg = nord.nord0_gui })
+				hl(0, "BlinkCmpMenuSelection", { bg = nord.nord14_gui, fg = nord.nord0_gui })
 				hl(0, "BlinkCmpScrollBarThumb", { fg = nord.nord10_gui, bg = nord.nord10_gui })
 				hl(0, "BlinkCmpSource", { fg = nord.nord4_gui, bg = "NONE" })
 				hl(0, "BlinkCmpGhostText", { fg = "#616E88", bg = "NONE" })

@@ -175,21 +175,39 @@ return {
 		config = function(_, opts)
 			require("codecompanion").setup(opts)
 
+			-- ai: actions
 			vim.keymap.set(
 				{ "n", "v" },
 				"<leader>ai",
 				"<cmd>CodeCompanionActions<cr>",
 				{ noremap = true, silent = true }
 			)
+
+			-- at: toggle
 			vim.keymap.set({ "n", "v" }, "<leader>at", function()
 				vim.cmd("CodeCompanionChat Toggle")
 			end, { noremap = true, silent = true })
+
+			-- as: send to ai
 			vim.keymap.set("v", "<leader>as", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+
+			-- ac: send to ai cli
+			vim.keymap.set({ "n", "v" }, "<LocalLeader>ac", function()
+				return require("codecompanion").cli("#{this}", { focus = false })
+			end, { desc = "Add context to the CLI agent" })
+
+			-- ad: diagnostics cli
+			vim.keymap.set("n", "<LocalLeader>ad", function()
+				return require("codecompanion").cli(
+					"#{diagnostics} Can you fix these?",
+					{ focus = false, submit = true }
+				)
+			end, { desc = "Send diagnostics to CLI agent" })
 
 			vim.api.nvim_create_autocmd("TermOpen", {
 				pattern = "*claude*",
 				callback = function()
-					vim.api.nvim_win_set_width(0, math.floor(vim.o.columns * 0.33))
+					vim.api.nvim_win_set_width(0, math.floor(vim.o.columns * 0.28))
 				end,
 			})
 
@@ -203,3 +221,42 @@ return {
 		ft = { "codecompanion" },
 	},
 }
+
+--[=[
+Modes (interactions): 
+  - CLI: :CodeCompanionCLI - A terminal wrapper around agent CLI tools such a Claude Code
+    - :CodeCompanionCLI Ask - open a cute prompt that has access to # - save/send with :w
+      - "Can you explain #{buffers}?, 'What does #{this} do?'
+  - Chat: :CodeCompanionChat - A chat buffer where you can converse with an LLM
+    - `#` add neovim editor context, e.g. #{buffer, messages, diff, quickfix}
+      - e.g. "What does the code in #{buffer} do?"
+      - "Compare #{buffer:old_file.js} with #{buffer:new_file.js} and explain the differences."
+      - #{diagnostics} can you explain the LSP errors in this file and how to fix them?
+    - `@` tools - perform specific tasks - running shell commands, editing buffers, etc
+      - Can you use @{grep_search} to find occurrences of "hello world"
+      - @{agent_skills}
+    - `/` - Slash commands. e.g. /file, /mode - dynamically insert context into chat buffer
+    - `\` - Backslash commands - ACP commands: e.g. \grill-me \pr-review
+    - Ctrl-C - destroy a chat
+    - `q` - top the current request
+    - `ga` - select adapter
+    - `gy` - yank last code block
+    - `zo` / `zc` - fold open / close
+    - `[[` / `]]` - move between responses
+    - `{` / `}` - cycle chats
+
+  - Cmd: :CodeCompanionCmd  - Create Neovim commands in the command-line
+  - Inline: :CodeCompanion or :cc - An inline interaction that can write code directly into a buffer
+    - The interaction will evaluate the prompt and either write code or open a chat buffer
+    - from Prompt Library
+      - /commit - Generate a commit message
+      - /explain - Explain how selected code in a buffer works
+      - /fix - Fix the selected code
+      - /lsp - Explain the LSP diagnostics for the selected code
+      - /tests - Generate unit tests for selected code
+  - Background - Runs tasks in the background such as compacting chat messages or generating titles for chats
+
+Miscellaneous
+  - npx ccusage@latest
+
+]=]
