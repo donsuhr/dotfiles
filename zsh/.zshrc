@@ -1,15 +1,17 @@
 export EDITOR="/usr/local/bin/vim"
 export ZSH=$HOME/.oh-my-zsh
 export BAT_THEME="Nord"
-
+export TERM=xterm-256color
+export COLORTERM=truecolor
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 export DISABLE_AUTO_UPDATE="true" # use `omz update` instead
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ "$TERM_PROGRAM" == "iTerm.app" ]]
 then
-  source $HOME/dotfiles/zsh/things/iterm.zshrc
+  source "$HOME/dotfiles/zsh/things/iterm.zshrc"
 fi
 
 unsetopt LIST_BEEP # dont bell when TAB produces a list
@@ -24,7 +26,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting # recommended last
 )
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # ------------------------------------------------------------
 if [ "$(command -v lsd)" ]; then

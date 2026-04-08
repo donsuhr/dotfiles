@@ -1,0 +1,132 @@
+{
+  "editor.accessibilitySupport": "off",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "RobotoMono Nerd Font Lt",
+  "editor.fontSize": 13,
+  "editor.minimap.enabled": false,
+  "explorer.autoReveal": false,
+  "files.autoSave": "onWindowChange",
+  "git.blame.editorDecoration.enabled": false,
+  "git.blame.statusBarItem.enabled": false,
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": false,
+    "remotes": true,
+    "stashes": false,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "fileHistory": false,
+    "repositories": true,
+    "searchAndCompare": false,
+    "launchpad": false
+  },
+  "playwright.pickLocatorCopyToClipboard": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Lt'",
+  "terminal.integrated.initialHint": false,
+  "window.commandCenter": false,
+  "window.density.editorTabHeight": "compact",
+  "window.nativeFullScreen": false,
+  "workbench.activityBar.compact": true,
+  "workbench.activityBar.location": "top",
+  "workbench.browser.showInTitleBar": false,
+  "workbench.colorTheme": "Nord Deep",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "window.openFoldersInNewWindow": "on",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "vim.leader": ",",
+  "vim.overrideCopy": false,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ":"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "z",
+        "g"
+      ],
+      "commands": [
+        "workbench.view.search"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "i"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ],
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": [
+        "<leader>",
+        "n",
+        "f"
+      ],
+      "commands": [
+        "workbench.files.action.showActiveFileInExplorer"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "<C-w>",
+        "h"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<C-w>",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<C-w>",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<C-w>",
+        "l"
+      ]
+    }
+  ],
+  "window.customTitleBarVisibility": "never",
+  "extensions.ignoreRecommendations": true
+}

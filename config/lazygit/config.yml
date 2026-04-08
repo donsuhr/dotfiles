@@ -1,0 +1,11 @@
+git:
+  pagers:
+    - pager: delta  --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+gui:
+  sidePanelWidth: 0.16 # Default is 0.333
+  showIcons: true
+  nerdFontsVersion: "3"
+
+# ln -s /real/path /linked/path
+# ln -s /Users/xxx/dotfiles/config/lazygit/config.yml /Users/xxx/.config/lazygit/config.yml
+

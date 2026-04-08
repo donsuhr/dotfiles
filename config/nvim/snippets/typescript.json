@@ -1,0 +1,33 @@
+{
+  "rspec bdd style test": {
+    "prefix": [
+      "it"
+    ],
+    "body": [
+      "it('$1', ()=> {",
+      "  $0",
+      "})"
+    ],
+    "description": "rspec test"
+  },
+  "rspec bdd style async test": {
+    "prefix": [
+      "ita"
+    ],
+    "body": [
+      "it('$1', async () => {",
+      "  $0",
+      "})"
+    ],
+    "description": "rspec async test"
+  },
+  "console log": {
+    "prefix": [
+      "cl"
+    ],
+    "body": [
+      "console.log($0)"
+    ],
+    "description": "console log"
+  }
+}

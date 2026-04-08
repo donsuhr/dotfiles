@@ -1,0 +1,7 @@
+require("zorg.config.options")
+require("zorg.config.keymap")
+require("zorg.config.lazy")
+require("zorg.config.autocmd")
+require("zorg.config.lsp")
+vim.cmd([[colorscheme nord]])
+require("zorg.config.color")
