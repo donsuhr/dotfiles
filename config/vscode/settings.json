@@ -27,7 +27,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Lt'",
   "terminal.integrated.initialHint": false,
-  "window.commandCenter": false,
   "window.density.editorTabHeight": "compact",
   "window.nativeFullScreen": false,
   "workbench.activityBar.compact": true,
@@ -78,5 +77,6 @@
     }
   ],
   "extensions.ignoreRecommendations": true,
-  "window.customTitleBarVisibility": "never"
+  "window.title": "${appName}${separator}${rootName}${separator}${profileName}${separator}${activeEditorShort}",
+  "gitlens.views.stashes.files.layout": "tree"
 }
