@@ -12,7 +12,7 @@ opt.smartcase = true
 
 -- UI
 opt.background = "dark"
-opt.conceallevel = 2
+opt.conceallevel = 0
 opt.cursorline = true
 opt.inccommand = "split"
 opt.mouse = "a"
