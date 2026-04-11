@@ -7,6 +7,10 @@ source "$HOME/dotfiles/zsh/things/nvm.zshrc"
 source "$HOME/dotfiles/zsh/things/nvm-cd-autorun.zshrc"
 
 export PATH="$(brew --prefix)/opt/python@3.13/libexec/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+export NODE_USE_SYSTEM_CA=1
 
 # Added by Windsurf
 export PATH="/Users/bill/.codeium/windsurf/bin:$PATH"
