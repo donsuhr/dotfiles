@@ -9,5 +9,13 @@ return {
 			-- options, see Configuration section below
 			-- there are no required options atm
 		})
+
+		vim.keymap.set({ "n", "v" }, "<leader>sr", function()
+			return require("grug-far").open()
+		end, { noremap = true, silent = true })
+
+		vim.keymap.set({ "n", "v" }, "<leader>sf", function()
+			return require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
+		end, { noremap = true, silent = true })
 	end,
 }
