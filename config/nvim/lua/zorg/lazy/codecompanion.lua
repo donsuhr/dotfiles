@@ -7,8 +7,8 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"lalitmee/codecompanion-spinners.nvim",
-			"ravitemer/codecompanion-history.nvim",
-			"cairijun/codecompanion-agentskills.nvim",
+			-- "ravitemer/codecompanion-history.nvim",
+			-- "cairijun/codecompanion-agentskills.nvim",
 		},
 
 		opts = {
@@ -78,6 +78,7 @@ return {
 						style = "cursor-relative",
 					},
 				},
+				--[[
 				agentskills = {
 					opts = {
 						paths = {
@@ -149,7 +150,8 @@ return {
 								format_summary = nil, -- custom function to format generated summary e.g to remove <think/> tags from summary
 							},
 						},
-						--[[
+            ]]
+				--[[
                 -- Memory system (requires VectorCode CLI)
                 memory = {
                     -- Automatically index summaries when they are generated
@@ -168,8 +170,8 @@ return {
                     index_on_startup = false,
                 },
                 ]]
-					},
-				},
+				-- },
+				-- },
 			},
 		},
 		config = function(_, opts)

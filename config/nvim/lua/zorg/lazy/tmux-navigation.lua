@@ -11,9 +11,17 @@ return {
 		vim.keymap.set("n", "<C-k>", ":NvimTmuxNavigateUp<CR>", { silent = true })
 		vim.keymap.set("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { silent = true })
 
-		vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true })
-		vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true })
-		vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true })
-		vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true })
+		--[=[
+		vim.api.nvim_create_autocmd("TermOpen", {
+			pattern = "*codecompanion*",
+			callback = function()
+				local opts = { noremap = true, buffer = true }
+				vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], opts)
+				vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], opts)
+				vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], opts)
+				vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], opts)
+			end,
+		})
+    ]=]
 	end,
 }
