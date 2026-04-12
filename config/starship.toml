@@ -8,11 +8,29 @@ vicmd_symbol = ""
 [package]
 disabled = true
 
-[git_status]
-stashed='⍟$count'
-
 [nodejs]
-style = "fg:#026e00"
+style = 'green'
+format = '[$symbol($version )]($style)'
 
+[git_status]
+ahead = ' ⇡${count}'
+diverged = ' ⇕⇡${ahead_count}⇣${behind_count}'
+behind = ' ⇣${count}'
+modified = ' M:${count}'
+conflicted = ' 󱐋${count}'
+stashed = ' 󱗞:${count}'
+untracked = ' ?:${count}'
+staged = ' +:${count}'
+renamed = ' r:${count}'
+deleted = ' :${count}'
+style = 'purple'
+format = '[$all_status$ahead_behind]($style) '
+
+[git_branch]
+symbol = ''
+format = '[$symbol $branch(:$remote_branch)]($style) '
+style = 'purple'
 # ln -s /real/path /linked/path
 # ln -s /Users/xxx/dotfiles/config/starship.toml /Users/xxx/.config/starship.toml
+
+
