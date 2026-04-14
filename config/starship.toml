@@ -9,6 +9,7 @@ vicmd_symbol = ""
 disabled = true
 
 [nodejs]
+symbol = ''
 style = 'green'
 format = '[$symbol($version )]($style)'
 

@@ -39,6 +39,7 @@ return {
 				hl(0, "RenderMarkdownCode", { bg = nord.nord1_gui })
 				hl(0, "VertSplit", { fg = nord.nord3_gui })
 				hl(0, "WinSeparator", { fg = nord.nord3_gui })
+				hl(0, "NonText", { fg = nord.nord3_gui })
 
 				-- NvimTree
 				hl(0, "NvimTreeRootFolder", { fg = nord.nord15_gui, bold = true })
@@ -54,6 +55,7 @@ return {
 	end,
 }
 
+-- <leader>hc
 --[[
   black = "#2E3440", -- nord0 in palette
 	dark_gray = "#3B4252", -- nord1 in palette
