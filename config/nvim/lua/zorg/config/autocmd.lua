@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		else
 			vim.cmd("NvimTreeOpen")
 		end
-		vim.cmd([[wincmd w]])
+		-- vim.cmd([[wincmd w]]) // move to next window
 	end,
 })
 
@@ -77,6 +77,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		"css",
 		"html",
 		"lua",
+		"json",
+		"jsonc",
 		"javascript",
 		"javascriptreact",
 		"typescript",

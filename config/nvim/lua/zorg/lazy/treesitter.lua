@@ -13,6 +13,7 @@ return {
 				"tsx",
 				"typescript",
 				"regex",
+				"json",
 				"bash",
 				"latex",
 				"scss",

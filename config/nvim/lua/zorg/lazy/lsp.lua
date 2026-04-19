@@ -1,6 +1,25 @@
 return {
 
 	{
+		"b0o/schemastore.nvim",
+		enabled = true,
+		config = function()
+			vim.lsp.config("jsonls", {
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
+					jsonc = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			})
+		end,
+	},
+
+	{
 		-- (i) automatically install, and
 		-- (ii) automatically enable (vim.lsp.enable()) installed servers
 		-- adds LSP install
