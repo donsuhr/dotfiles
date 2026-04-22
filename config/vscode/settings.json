@@ -21,7 +21,7 @@
     "fileHistory": false,
     "repositories": true,
     "searchAndCompare": false,
-    "launchpad": false
+    "launchpad": false,
   },
   "playwright.pickLocatorCopyToClipboard": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -44,39 +44,40 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "z", "g"],
-      "commands": ["workbench.view.search"]
+      "commands": ["workbench.view.search"],
     },
     {
       "before": ["<leader>", "c", "i"],
       "commands": ["editor.action.commentLine"],
-      "when": "editorTextFocus && !editorReadonly"
+      "when": "editorTextFocus && !editorReadonly",
     },
     {
       "before": ["<leader>", "n", "f"],
-      "commands": ["workbench.files.action.showActiveFileInExplorer"]
+      "commands": ["workbench.files.action.showActiveFileInExplorer"],
     },
     {
       "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
+      "commands": ["editor.action.goToReferences"],
     },
     {
       "before": ["<C-h>"],
-      "after": ["<C-w>", "h"]
+      "after": ["<C-w>", "h"],
     },
     {
       "before": ["<C-j>"],
-      "after": ["<C-w>", "j"]
+      "after": ["<C-w>", "j"],
     },
     {
       "before": ["<C-k>"],
-      "after": ["<C-w>", "k"]
+      "after": ["<C-w>", "k"],
     },
     {
       "before": ["<C-l>"],
-      "after": ["<C-w>", "l"]
-    }
+      "after": ["<C-w>", "l"],
+    },
   ],
   "extensions.ignoreRecommendations": true,
   "window.title": "${appName}${separator}${rootName}${separator}${profileName}${separator}${activeEditorShort}",
-  "gitlens.views.stashes.files.layout": "tree"
+  "gitlens.views.stashes.files.layout": "tree",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
 }
