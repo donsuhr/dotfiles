@@ -1,7 +1,6 @@
 {
   "editor.accessibilitySupport": "off",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "editor.fontFamily": "RobotoMono Nerd Font Lt",
   "editor.fontSize": 13,
   "editor.minimap.enabled": false,
@@ -20,7 +19,7 @@
     "contributors": true,
     "fileHistory": false,
     "repositories": true,
-    "searchAndCompare": false,
+    "searchAndCompare": true,
     "launchpad": false,
   },
   "playwright.pickLocatorCopyToClipboard": false,
@@ -80,4 +79,35 @@
   "window.title": "${appName}${separator}${rootName}${separator}${profileName}${separator}${activeEditorShort}",
   "gitlens.views.stashes.files.layout": "tree",
   "js/ts.updateImportsOnFileMove.enabled": "always",
+  "editor.scrollBeyondLastLine": false,
+  "redhat.telemetry.enabled": true,
+  "yaml.format.singleQuote": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": false,
+  },
+  "windsurf.acp.enabledAgents": {
+    "devin-cli": true,
+  },
+  "windsurf.acp.agentPreferences": {
+    "devin-cli": {
+      "model": "claude-sonnet-5-medium",
+      "mode": "bypass"
+    }
+  },
+  "explorer.confirmDelete": false,
+  "windsurf.autoContinue": 0,
+  "devin.acp.enabledAgents": {
+    "devin-cli": true,
+  },
+  "devin.acp.agentPreferences": {
+    "devin-cli": {
+      "model": "claude-sonnet-5-medium",
+      "mode": "bypass"
+    }
+  },
+  "devin.autoContinue": 0,
+  "windsurf.completionMode": "off",
+  "devin.completionMode": "off",
+  "devin.acp.preferredAgent": "devin-cli",
 }
