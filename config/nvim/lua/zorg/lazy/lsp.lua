@@ -43,6 +43,7 @@ return {
 			ensure_installed = {
 				-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 				"ast_grep",
+				"buf_ls",
 				"cspell_ls",
 				"cssls",
 				"cssmodules_ls",

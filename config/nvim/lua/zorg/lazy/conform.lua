@@ -27,6 +27,7 @@ return {
 				yaml = { "prettier" },
 				["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
 				["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+				proto = { "buf" }, -- Tries buf first, falls back to clang-format
 
 				-- Use the "_" filetype to run formatters on filetypes that don't
 				-- have other formatters configured.
