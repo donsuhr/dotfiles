@@ -109,5 +109,4 @@
   "devin.autoContinue": 0,
   "windsurf.completionMode": "off",
   "devin.completionMode": "off",
-  "devin.acp.preferredAgent": "devin-cli",
 }
