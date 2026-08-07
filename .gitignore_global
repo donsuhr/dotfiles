@@ -64,3 +64,5 @@ Session.vim
 # Intuit Workspace #
 **/ds--*
 .intuitgithookrc
+
+**/.claude/settings.local.json
