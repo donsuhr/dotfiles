@@ -25,8 +25,8 @@ return {
 				json = { "prettier" },
 				jsonc = { "prettier" },
 				yaml = { "prettier" },
-				["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
-				["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+				["markdown"] = { "prettier", "markdown-toc" },
+				["markdown.mdx"] = { "prettier", "markdown-toc" },
 				proto = { "buf" }, -- Tries buf first, falls back to clang-format
 
 				-- Use the "_" filetype to run formatters on filetypes that don't
@@ -36,8 +36,6 @@ return {
 
 			formatters = {
 				prettier = {
-					require_cwd = true,
-
 					cwd = require("conform.util").root_file({
 						".prettierrc",
 						".prettierrc.json",
@@ -65,7 +63,7 @@ return {
 				["markdownlint-cli2"] = {
 					condition = function(_, ctx)
 						local diag = vim.tbl_filter(function(d)
-							return d.source == "markdownlint"
+							return d.source == "markdownlint-cli2"
 						end, vim.diagnostic.get(ctx.buf))
 						return #diag > 0
 					end,
