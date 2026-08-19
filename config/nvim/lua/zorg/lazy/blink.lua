@@ -54,7 +54,7 @@ return {
 			},
 			ghost_text = { enabled = true },
 			list = {
-				selection = { preselect = true, auto_insert = false },
+				selection = { preselect = false, auto_insert = false },
 			},
 			menu = {
 				draw = {
