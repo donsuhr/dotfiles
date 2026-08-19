@@ -98,6 +98,15 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("VimResized", {
+	group = augroup,
+	desc = "equalize window sizes on resize (e.g. tmux zoom)",
+	pattern = "*",
+	callback = function()
+		vim.cmd("wincmd =")
+	end,
+})
+
 vim.api.nvim_create_user_command("LintInfo", function()
 	-- show which linters are enabled for a buffer
 	local filetype = vim.bo.filetype
