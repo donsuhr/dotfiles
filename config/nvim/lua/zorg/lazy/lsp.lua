@@ -50,6 +50,7 @@ return {
 				"cucumber_language_server",
 				"emmet_language_server",
 				"eslint",
+				"gopls",
 				"html",
 				"jsonls",
 				"lua_ls",

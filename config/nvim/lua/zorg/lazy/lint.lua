@@ -10,6 +10,7 @@ return {
 		lint.linters_by_ft = {
 			-- js linting in lsp causes duplicate errors here
 			-- css = { "eslint_d" },
+			go = { "golangcilint" },
 			markdown = { "markdownlint-cli2" },
 		}
 

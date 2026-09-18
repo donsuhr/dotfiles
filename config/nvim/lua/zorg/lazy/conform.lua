@@ -21,6 +21,7 @@ return {
 				javascriptreact = jsFmt,
 				typescriptreact = jsFmt,
 				css = jsFmt,
+				go = { "goimports" },
 				html = { "prettier" },
 				json = { "prettier" },
 				jsonc = { "prettier" },
