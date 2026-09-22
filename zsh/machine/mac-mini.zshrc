@@ -7,6 +7,7 @@ source "$HOME/dotfiles/zsh/things/cargo.zshrc"
 source "$HOME/dotfiles/zsh/things/daskeyboard.zshrc"
 source "$HOME/dotfiles/zsh/things/fzf.zshrc"
 source "$HOME/dotfiles/zsh/things/pyenv.zshrc"
+source "$HOME/dotfiles/zsh/things/go.zshrc"
 
 # Added by Windsurf
 export PATH="/Users/bill/.codeium/windsurf/bin:$PATH"
