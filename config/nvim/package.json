@@ -3,11 +3,12 @@
   "contributes": {
     "snippets": [
       {
-        "language": [
-          "typescript",
-          "typescriptreact"
-        ],
+        "language": ["typescript", "typescriptreact"],
         "path": "snippets/typescript.json"
+      },
+      {
+        "language": ["go"],
+        "path": "snippets/go.json"
       }
     ]
   }

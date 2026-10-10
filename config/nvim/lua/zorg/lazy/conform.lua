@@ -21,8 +21,14 @@ return {
 				javascriptreact = jsFmt,
 				typescriptreact = jsFmt,
 				css = jsFmt,
-				go = { "goimports", "gofumpt" },
-				html = { "prettier" },
+				go = { "goimports", "gofumpt", "golangci-lint" },
+				html = function(bufnr)
+					local filename = vim.api.nvim_buf_get_name(bufnr)
+					if filename:match("%.gohtml$") then
+						return { "gotmplfmt" }
+					end
+					return { "prettier" }
+				end,
 				json = { "prettier" },
 				jsonc = { "prettier" },
 				yaml = { "prettier" },
@@ -68,6 +74,11 @@ return {
 						end, vim.diagnostic.get(ctx.buf))
 						return #diag > 0
 					end,
+				},
+				gotmplfmt = {
+					command = "gotmplfmt",
+					args = {},
+					stdin = true,
 				},
 			},
 		})

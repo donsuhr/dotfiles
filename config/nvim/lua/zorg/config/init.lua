@@ -1,4 +1,5 @@
 require("zorg.config.options")
+require("zorg.config.filetype")
 require("zorg.config.keymap")
 require("zorg.config.lazy")
 require("zorg.config.autocmd")

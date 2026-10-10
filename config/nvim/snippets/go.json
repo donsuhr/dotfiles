@@ -1,0 +1,7 @@
+{
+  "if err != nil": {
+    "prefix": ["ie"],
+    "body": ["if err != nil {", "  $0", "}"],
+    "description": "if err != nil"
+  }
+}

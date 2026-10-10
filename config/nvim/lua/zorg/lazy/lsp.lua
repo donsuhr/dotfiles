@@ -16,6 +16,20 @@ return {
 					},
 				},
 			})
+
+			vim.lsp.config("gopls", {
+				settings = {
+					gopls = {
+						analyses = {
+							shadow = true,
+							unusedparams = true,
+							nilness = true,
+						},
+						staticcheck = true, -- live staticcheck diagnostics as you type
+						usePlaceholders = true,
+					},
+				},
+			})
 		end,
 	},
 
@@ -33,6 +47,27 @@ return {
 				-- adds :Mason
 				"mason-org/mason.nvim",
 				opts = {},
+			},
+			{
+				-- Installs non-LSP mason packages (formatters, linters, DAP adapters)
+				-- so tool versions are pinned in dotfiles instead of `go install`/PATH hacks.
+				"WhoIsSethDaniel/mason-tool-installer.nvim",
+				opts = {
+					ensure_installed = {
+						"gofumpt",
+						"goimports",
+						"golines",
+						"delve",
+						"golangci-lint",
+						"prettierd",
+						"prettier",
+						"stylua",
+						"markdownlint-cli2",
+						"markdown-toc",
+						"buf",
+						"clang-format",
+					},
+				},
 			},
 			-- Provides default configurations and helper functions for various LSPs
 			-- quickstart configs
