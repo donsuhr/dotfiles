@@ -1,6 +1,7 @@
 DEFAULT_USER="dsuhr"
 
 source "$HOME/dotfiles/zsh/.zshrc"
+source "$HOME/dotfiles/zsh/things/brew.zshrc"
 source "$HOME/dotfiles/zsh/things/browsers.zshrc"
 source "$HOME/dotfiles/zsh/things/fzf.zshrc"
 source "$HOME/dotfiles/zsh/things/nvm.zshrc"

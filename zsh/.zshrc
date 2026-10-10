@@ -20,11 +20,8 @@ setopt ignoreeof # stop accidentally deleting windows with CtrlD
 
 # ------------------------------------------------------------
 
-# https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh
 plugins=(
   vi-mode
-  zsh-autosuggestions
-  zsh-syntax-highlighting # recommended last
 )
 source "$ZSH/oh-my-zsh.sh"
 
