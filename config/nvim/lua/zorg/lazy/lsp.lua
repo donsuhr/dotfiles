@@ -20,12 +20,7 @@ return {
 			vim.lsp.config("gopls", {
 				settings = {
 					gopls = {
-						analyses = {
-							shadow = true,
-							unusedparams = true,
-							nilness = true,
-						},
-						staticcheck = true, -- live staticcheck diagnostics as you type
+						-- staticcheck/shadow/nilness etc. come from golangci-lint
 						usePlaceholders = true,
 					},
 				},
