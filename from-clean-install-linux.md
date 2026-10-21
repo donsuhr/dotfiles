@@ -52,3 +52,11 @@ curl -L https://github.com/asdf-vm/asdf/releases/latest/download/asdf-linux-amd6
 ```
 
 See `from-clean-install.md` for example plugin/version usage.
+
+## cspell global config
+
+Symlink the shared config (cspell reads `~/.config/cspell/cspell.json`):
+
+```bash
+ln -s ~/dotfiles/config/cspell ~/.config/cspell
+```

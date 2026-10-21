@@ -14,6 +14,10 @@
 
 - enable zsh z plugin `touch ~/.z`
 
+- global cspell config (macOS reads `~/Library/Preferences/cspell`):
+  `mkdir -p ~/Library/Preferences`
+  `ln -s ~/dotfiles/config/cspell ~/Library/Preferences/cspell`
+
 - terminal font
 - - [RobotoMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip)
 - - [SauceCodePro](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip)
@@ -25,4 +29,4 @@
   `defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false`
 - verbose boot: `sudo nvram boot-args="-v"`
 - `defaults write -g KeyRepeat -float 1.5` # normal minimum is 2 (30 ms)
-- `defaults write -g NSQuitAlwaysKeepsWindows -bool false` # dont reopen apps
+- `defaults write -g NSQuitAlwaysKeepsWindows -bool false` # don't reopen apps
