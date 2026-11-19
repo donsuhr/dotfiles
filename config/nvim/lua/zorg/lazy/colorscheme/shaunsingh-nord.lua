@@ -11,6 +11,14 @@ return {
 				local hl = vim.api.nvim_set_hl
 				local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
 
+				-- Custom colors (out of nord palette)
+				local custom = {
+					comment = "#8C97AD", -- between nord3_bright #616E88 and nord4 #D8DEE9, muted blue-gray
+				}
+
+				-- :Inspect - get color under cursor
+				-- :InspectTree - show the treesitter tree
+
 				-- Syntax
 				hl(0, "@keyword.function", { fg = nord.nord9_gui })
 				hl(0, "@lsp.typemod.class.defaultLibrary.typescript", { fg = nord.nord10_gui })
@@ -18,6 +26,8 @@ return {
 				hl(0, "@lsp.typemod.property.declaration.typescript", { fg = nord.nord5_gui })
 				hl(0, "@property", { fg = nord.nord4_gui })
 				hl(0, "@type", { fg = nord.nord15_gui })
+				hl(0, "Comment", { fg = custom.comment, italic = true })
+				hl(0, "@comment", { fg = custom.comment, italic = true })
 
 				-- UI
 				hl(0, "AvanteSidebarWinSeparator", { fg = nord.nord3_gui })
@@ -55,7 +65,7 @@ return {
 	end,
 }
 
--- <leader>hc
+-- <leader>hc -- enable highlight color -- nvim-highlight-colors
 --[[
   black = "#2E3440", -- nord0 in palette
 	dark_gray = "#3B4252", -- nord1 in palette
