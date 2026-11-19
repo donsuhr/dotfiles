@@ -21,7 +21,7 @@ return {
 				javascriptreact = jsFmt,
 				typescriptreact = jsFmt,
 				css = jsFmt,
-				go = { "goimports", "gofumpt", "golangci-lint" },
+				go = { "goimports", "golines", "golangci-lint" },
 				html = function(bufnr)
 					local filename = vim.api.nvim_buf_get_name(bufnr)
 					if filename:match("%.gohtml$") then
@@ -43,6 +43,10 @@ return {
 			},
 
 			formatters = {
+				golines = {
+					-- golines runs gofumpt internally
+					prepend_args = { "--max-len=100", "--base-formatter=gofumpt" },
+				},
 				prettier = {
 					cwd = require("conform.util").root_file({
 						".prettierrc",
