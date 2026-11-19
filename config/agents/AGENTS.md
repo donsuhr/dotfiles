@@ -1,45 +1,22 @@
 # Agents.md
 
+Language-neutral global rules. Language-specific rules live in `rules/`
+(symlinked to `~/.claude/rules`, path-scoped by file glob).
+
 - In all interactions and commit messages, be extremely concise and sacrifice
   grammar for the sake of concision.
 
 ## Important
 
-- When working with typescript always use strict mode.
-- Never use the 'any' type in typescript. Write a type guard function if needed.
 - Never commit secrets.
 - Keep commit scope limited to one logical change per commit.
 - Never delete ANY files without asking first.
-- Don't use single letter variable names. Only use abbreviations in variable
-  names if the entire variable name becomes very long.
 - Quote all shell variables: "$VAR" not $VAR
-- When writing code, always favor the simplest thing that could work. Do not
-  prematurely optimize or prematurely abstract code.
-- don't pass a function directly to an iterator method. use a separate callback
-  function:
-
-```typescript
-[1, 2, 3].map((x) => unicorn(x));
-```
-
-- Avoid type assertions (`as`). Use type narrowing (`typeof`, `instanceof`,
-  `in`) or type guards to let TypeScript infer types naturally.
-- Never use non-null assertions (`!`). Instead, narrow with an `if` guard and
-  throw a descriptive error:
-
-```typescript
-const val = arr[0];
-if (!val) throw new Error("expected val");
-```
-
-## Testing
-
-- Prefer real implementations over mocks. Only mock at system boundaries:
-  `fetch`, external APIs, and modules that cannot run in the test environment.
-- When a module needs mocking to be testable, that is a signal to refactor it
-  (e.g. export the logic as a pure function) rather than add a mock.
-- When partial mocking is needed, use `jest.requireActual` to keep the real
-  implementation and only override the boundary function.
+- Favor the simplest thing that could work. Don't prematurely optimize or
+  abstract.
+- Follow the idioms and conventions of the language at hand. Language rules in
+  `rules/` override these defaults.
+- Prefer real implementations over mocks unless a language rule says otherwise.
 
 ## Plans
 
