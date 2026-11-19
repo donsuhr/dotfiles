@@ -34,6 +34,7 @@ return {
 				yaml = { "prettier" },
 				["markdown"] = { "prettier", "markdown-toc" },
 				["markdown.mdx"] = { "prettier", "markdown-toc" },
+				make = { "bake" },
 				proto = { "buf" }, -- Tries buf first, falls back to clang-format
 
 				-- Use the "_" filetype to run formatters on filetypes that don't
